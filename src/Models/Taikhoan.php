@@ -14,15 +14,7 @@ class Taikhoan extends Model{
         'tel',
         'role',
     ];
-
-    protected $columnss = [
-        'user',
-        'pass',
-        'email',
-        'address',
-        'tel',
-        'role',
-    ];
+    
     
 }
 ?>

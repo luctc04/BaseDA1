@@ -7,6 +7,9 @@ use Ductong\BaseMvc\Models\Taikhoan;
 
 class TaikhoanController extends Controller
 {
+    /*
+        Đây là hàm hiển thị danh sách tài khoản
+    */
     public function index() {
         $taikhoans = (new Taikhoan)->all();
         
@@ -21,6 +24,7 @@ class TaikhoanController extends Controller
                 'email' => $_POST['email'],
                 'address' => $_POST['address'],
                 'tel' => $_POST['tel'],
+                'role' => $_POST['role'],
             ];
 
             (new Taikhoan)->insert($data);
