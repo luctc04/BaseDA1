@@ -15,5 +15,6 @@ class Taikhoan extends Model{
         'role',
     ];
     
+    
 }
 ?>
