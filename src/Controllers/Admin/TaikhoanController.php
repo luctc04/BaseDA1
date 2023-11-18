@@ -21,6 +21,7 @@ class TaikhoanController extends Controller
                 'email' => $_POST['email'],
                 'address' => $_POST['address'],
                 'tel' => $_POST['tel'],
+                'role' => $_POST['role'],
             ];
 
             (new Taikhoan)->insert($data);
