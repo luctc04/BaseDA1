@@ -9,6 +9,8 @@ class Model
 
     protected $columns;
 
+    protected $columnss;
+
     public function __construct()
     {
         try {

@@ -51,9 +51,6 @@
                                         <label for="tel" class="mt-3">Tel</label>
                                         <input type="text" name="tel" class="form-control">
                                         
-                                        <label for="role" class="mt-3">Role</label>
-                                        <input type="text" name="role" class="form-control">
-
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/taikhoans" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>
