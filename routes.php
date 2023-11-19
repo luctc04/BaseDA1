@@ -4,6 +4,7 @@ use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\SanphamController;
+use Ductong\BaseMvc\Controllers\Admin\TaikhoanController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Router;
 
@@ -27,3 +28,8 @@ $router->addRoute('/admin/sanphams', SanphamController::class, 'index');
 $router->addRoute('/admin/sanphams/create', SanphamController::class, 'create');
 $router->addRoute('/admin/sanphams/update', SanphamController::class, 'update');
 $router->addRoute('/admin/sanphams/delete', SanphamController::class, 'delete');
+
+$router->addRoute('/admin/taikhoans', TaikhoanController::class, 'index');
+$router->addRoute('/admin/taikhoans/create', TaikhoanController::class, 'create');
+$router->addRoute('/admin/taikhoans/update', TaikhoanController::class, 'update');
+$router->addRoute('/admin/taikhoans/delete', TaikhoanController::class, 'delete');

@@ -36,11 +36,13 @@
                             <i class="feather icon-layers"></i>
                         </span>
                         <span class="pcoded-mtext">Quản lý Sản phẩm</span>
+                    <a href="/admin/taikhoans" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-layers"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý tài khoản</span>
                     </a>
                 </li>
-
-                
-
             </ul>
         </div>
     </div>
