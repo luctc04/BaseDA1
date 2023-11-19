@@ -35,7 +35,8 @@
                                     <h5>Thêm mới Sản Phẩm</h5>
                                 </div>
                                 <div class="card-block">
-                                    <form action="" method="post">
+                                    <form action="" method="post" enctype="multipart/form-data">
+
                                         <label for="name">Tên</label>
                                         <input type="text" name="name" class="form-control">
 
@@ -46,7 +47,10 @@
                                         <input type="file" name="img" class="form-control">
 
                                         <label for="mota" class="mt-3">Mô tả</label>
-                                        <input type="text" name="mota" class="form-control">
+                                       <textarea name="mota" id="" cols="30" rows="10" class="form-control"></textarea>
+
+                                       <label for="view" class="mt-3">Lượt xem</label>
+                                       <input type="number" name="view" class="form-control">
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/sanphams" class="btn btn-primary mt-3">Quay lại d/s</a>

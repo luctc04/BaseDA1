@@ -70,7 +70,19 @@
                                                             </form>
                                                         </td>
                                                     </tr>
-                                                <?php endforeach; ?>
+
+                                                <?php
+                                                    // $hinhpath = __DIR__ . "/../../../uploads/" .$img
+                                                    // if(is_file($hinhpath)){
+                                                    //     $img = "<img src='".$hinhpath."' height='80' width='90'>";
+                                                    // }
+
+                                                ?>
+                                                    
+
+
+
+                                                <?php endforeach; ?> 
                                             </tbody>
 
                                         </table>
