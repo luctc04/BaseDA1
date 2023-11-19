@@ -30,6 +30,15 @@
                     </a>
                 </li>
 
+                <li class>
+                    <a href="/admin/sanphams" class="waves-effect waves-dark">
+                        <span class="pcoded-micon">
+                            <i class="feather icon-layers"></i>
+                        </span>
+                        <span class="pcoded-mtext">Quản lý Sản phẩm</span>
+                    </a>
+                </li>
+
                 
 
             </ul>
