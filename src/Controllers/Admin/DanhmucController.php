@@ -3,15 +3,15 @@
 namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
-use Ductong\BaseMvc\Models\Category;
+use Ductong\BaseMvc\Models\Danhmuc;
 
-class CategoryController extends Controller {
+class DanhmucController extends Controller {
 
     /* Lấy danh sách */
     public function index() {
-        $categories = (new Category())->all();
+        $danhmuc = (new Danhmuc())->all();
 
-        $this->renderAdmin("categories/index", ["categories" => $categories]);
+        $this->renderAdmin("danhmucs/index", ["danhmucs" => $danhmuc]);
     }
 
     /* Thêm mới */
@@ -21,12 +21,12 @@ class CategoryController extends Controller {
                 'name' => $_POST['name'],
             ];
 
-            (new Category())->insert($data);
+            (new Danhmuc())->insert($data);
 
-            header('Location: /admin/categories');
+            header('Location: /admin/danhmucs');
         }
 
-        $this->renderAdmin("categories/create");
+        $this->renderAdmin("danhmucs/create");
     }
 
     /* Cập nhật */
@@ -41,12 +41,14 @@ class CategoryController extends Controller {
                 ['id', '=', $_GET['id']],
             ];
 
-            (new Category())->update($data, $conditions);
+            (new Danhmuc())->update($data, $conditions);
+            header('Location: /admin/danhmucs');
         }
 
-        $category = (new Category())->findOne($_GET["id"]);
+        $danhmuc = (new Danhmuc())->findOne($_GET["id"]);
 
-        $this->renderAdmin("categories/update", ["category" => $category]);
+
+        $this->renderAdmin("danhmucs/update", ["danhmuc" => $danhmuc]);
     }
 
     /* Xóa */
@@ -55,8 +57,8 @@ class CategoryController extends Controller {
             ['id', '=', $_GET['id']],
         ];
 
-        (new Category())->delete($conditions);
+        (new Danhmuc())->delete($conditions);
 
-        header('Location: /admin/categories');
+        header('Location: /admin/danhmucs');
     }
 }
