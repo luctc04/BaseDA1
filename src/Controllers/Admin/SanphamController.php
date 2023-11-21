@@ -23,7 +23,7 @@ class SanphamController extends Controller
                 'price' => $_POST['price'],
                 'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
-                'view' => $_POST['view'], 
+                'view' => $_POST['view'],
                 'iddm' => 0,
             ];
             
