@@ -22,7 +22,7 @@
                 </li>
 
                 <li class>
-                    <a href="/admin/categories" class="waves-effect waves-dark">
+                    <a href="/admin/danhmucs" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-layers"></i>
                         </span>
