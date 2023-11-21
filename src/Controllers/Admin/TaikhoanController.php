@@ -52,6 +52,8 @@ class TaikhoanController extends Controller
             ];
 
             (new Taikhoan())->update($data, $conditions);
+
+            header('Location: /admin/taikhoans');
         }
 
         $taikhoan = (new Taikhoan())->findOne($_GET["id"]);
