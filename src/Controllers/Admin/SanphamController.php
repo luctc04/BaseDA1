@@ -23,8 +23,6 @@ class SanphamController extends Controller
                 'price' => $_POST['price'],
                 'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
-                'view' => 0, // cần mặc định là 0
-                'iddm' => 1, // cái này anh ko biết là gì em tự định nghĩa 
             ];
 
             (new Sanpham)->insert($data);
