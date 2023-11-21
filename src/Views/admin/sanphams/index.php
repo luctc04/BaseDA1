@@ -57,7 +57,7 @@
                                                         <td><?= $sanpham['id'] ?></td>
                                                         <td><?= $sanpham['name'] ?></td>
                                                         <td><?= $sanpham['price'] ?></td>
-                                                        <td><?= $sanpham['img'] ?></td>
+                                                        <td><img src=<?= "/uploads/".$sanpham['img'] ?> height='80' width='90'></td>
                                                         <td><?= $sanpham['mota'] ?></td>
                                                         <td><?= $sanpham['view'] ?></td>
                                                         <td><?= $sanpham['iddm'] ?></td>
@@ -70,7 +70,13 @@
                                                             </form>
                                                         </td>
                                                     </tr>
-                                                <?php endforeach; ?>
+
+                                                    
+                                                    
+
+
+
+                                                <?php endforeach; ?> 
                                             </tbody>
 
                                         </table>

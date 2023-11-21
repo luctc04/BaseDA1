@@ -12,7 +12,7 @@ class SanphamController extends Controller
     */
     public function index() {
         $sanphams = (new Sanpham)->all();
-        
+
         $this->renderAdmin('sanphams/index', ['sanphams' => $sanphams]);
     }
 
@@ -23,16 +23,23 @@ class SanphamController extends Controller
                 'price' => $_POST['price'],
                 'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
-                'view' => 0, // cần mặc định là 0
-                'iddm' => 1, // cái này anh ko biết là gì em tự định nghĩa 
+                'view' => $_POST['view'], 
+                'iddm' => 0,
             ];
-
+            
+            $img = $_FILES['img']['name'];
+            $targetDir = __DIR__ . "/../../../uploads/";
+            $targetFile = $targetDir . basename($_FILES["img"]["name"]);
+            if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
+                $data['img'] = $img;
+            }
+        
             (new Sanpham)->insert($data);
 
             header('Location: /admin/sanphams');
         }
 
-        $this->renderAdmin('sanphams/createSP');
+        $this->renderAdmin('sanphams/create');
     }
 
     public function update() {
@@ -42,10 +49,14 @@ class SanphamController extends Controller
                 'price' => $_POST['price'],
                 'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
-                // 'view' => $_POST['view'],
-                // 'iddm' => $_POST['iddm'],
+                'view' => $_POST['view'],
             ];
-
+            $img = $_FILES['img']['name'];
+            $targetDir = __DIR__ . "/../../../uploads/";
+            $targetFile = $targetDir . basename($_FILES["img"]["name"]);
+            if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
+                $data['img'] = $img;
+            }
             $conditions = [
                 ['id', '=', $_GET['id']]
             ];

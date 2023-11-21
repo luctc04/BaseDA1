@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/addmin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Sản Phẩm</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Sản phẩm</a> </li>
                     </ul>
                 </div>
             </div>
@@ -32,21 +32,25 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Thêm mới Sản Phẩm</h5>
+                                    <h5>Thêm mới</h5>
                                 </div>
                                 <div class="card-block">
-                                    <form action="" method="post">
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        <?php $sanpham?>
                                         <label for="name">Tên</label>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" value=<?= $sanpham['name']?>>
 
                                         <label for="price" class="mt-3">Giá</label>
-                                        <input type="number" name="price" class="form-control">
+                                        <input type="number" name="price" class="form-control" value=<?= $sanpham['price']?>>
 
                                         <label for="img" class="mt-3">Ảnh</label>
                                         <input type="file" name="img" class="form-control">
 
                                         <label for="mota" class="mt-3">Mô tả</label>
-                                        <input type="text" name="mota" class="form-control">
+                                       <textarea name="mota" id="" cols="30" rows="10" class="form-control" value=<?= $sanpham['mota']?>></textarea>
+
+                                       <label for="view" class="mt-3">Lượt xem</label>
+                                       <input type="number" name="view" class="form-control" value=<?= $sanpham['view']?>>
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/sanphams" class="btn btn-primary mt-3">Quay lại d/s</a>
