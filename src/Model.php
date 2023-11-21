@@ -108,7 +108,10 @@ class Model
 
         $sets = [];
         foreach ($this->columns as $column) {
-            $sets[] = "{$column} = :{$column}";
+            // $sets[] = "{$column} = :{$column}";
+            if (array_key_exists($column, $data)) {
+                $sets[] = "{$column} = :{$column}";
+            }
         }
         $sets = implode(", ", $sets);
         $sql .= "{$sets}";
