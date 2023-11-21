@@ -21,16 +21,17 @@ class SanphamController extends Controller
             $data = [
                 'name' => $_POST['name'],
                 'price' => $_POST['price'],
+                'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
                 'view' => $_POST['view'], 
-                
+                'iddm' => 0,
             ];
             
             $img = $_FILES['img']['name'];
             $targetDir = __DIR__ . "/../../../uploads/";
             $targetFile = $targetDir . basename($_FILES["img"]["name"]);
             if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
-                $data['img'] = $targetFile;
+                $data['img'] = $img;
             }
         
             (new Sanpham)->insert($data);
@@ -49,9 +50,13 @@ class SanphamController extends Controller
                 'img' => $_POST['img'],
                 'mota' => $_POST['mota'],
                 'view' => $_POST['view'],
-                // 'iddm' => $_POST['iddm'],
             ];
-
+            $img = $_FILES['img']['name'];
+            $targetDir = __DIR__ . "/../../../uploads/";
+            $targetFile = $targetDir . basename($_FILES["img"]["name"]);
+            if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
+                $data['img'] = $img;
+            }
             $conditions = [
                 ['id', '=', $_GET['id']]
             ];
