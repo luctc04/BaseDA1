@@ -32,7 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Thêm Mới Tài Khoản</h5>
+                                    <h5>Thêm Mới</h5>
                                 </div>
                                 <div class="card-block">
                                     <form action="" method="post">

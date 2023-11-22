@@ -6,7 +6,6 @@ use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\SanphamController;
 use Ductong\BaseMvc\Controllers\Admin\TaikhoanController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
-use Ductong\BaseMvc\Models\Danhmuc;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();

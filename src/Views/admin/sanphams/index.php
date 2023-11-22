@@ -42,12 +42,13 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>Danh mục</th>
                                                     <th>Tên</th>
-                                                    <th>Giá</th>
                                                     <th>Ảnh</th>
-                                                    <th>Mô tả</th>
+                                                    <th>Giá</th>
+                                                    <th>Giá sale</th>
                                                     <th>Lượt xem</th>
-                                                    <th>iddm</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
 
@@ -55,28 +56,24 @@
                                                 <?php foreach ($sanphams as $sanpham) : ?>
                                                     <tr>
                                                         <td><?= $sanpham['id'] ?></td>
+                                                        <td><?= $arrayDanhmucIdName[$sanpham['id_dm']] ?></td>
                                                         <td><?= $sanpham['name'] ?></td>
+                                                        <td>
+                                                            <img src="<?= $sanpham['img'] ?>" alt="" height="80px" width="130px">
+                                                        </td>
                                                         <td><?= $sanpham['price'] ?></td>
-                                                        <td><img src=<?= "/uploads/".$sanpham['img'] ?> height='80' width='90'></td>
-                                                        <td><?= $sanpham['mota'] ?></td>
+                                                        <td><?= $sanpham['price_sale'] ?></td>
                                                         <td><?= $sanpham['view'] ?></td>
-                                                        <td><?= $sanpham['iddm'] ?></td>
-
                                                         <td>
                                                             <a href="/admin/sanphams/update?id=<?= $sanpham['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
                                                             <form action="/admin/sanphams/delete?id=<?= $sanpham['id'] ?>" method="post">
-                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
+                                                                <input type="hidden" name="img" value="<?= $sanpham['img'] ?>">
+                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
                                                             </form>
                                                         </td>
                                                     </tr>
-
-                                                    
-                                                    
-
-
-
-                                                <?php endforeach; ?> 
+                                                <?php endforeach; ?>
                                             </tbody>
 
                                         </table>
