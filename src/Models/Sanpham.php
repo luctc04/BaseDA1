@@ -9,9 +9,11 @@ class Sanpham extends Model {
     protected $columns = [
         'name',
         'price',
+        'price_sale',
         'img',
         'mota',
-        'view',
-        'iddm',
+        'id_dm',
     ];
 }
+
+

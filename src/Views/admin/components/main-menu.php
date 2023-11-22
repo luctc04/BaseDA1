@@ -24,7 +24,7 @@
                 <li class>
                     <a href="/admin/danhmucs" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
-                            <i class="feather icon-layers"></i>
+                            <i class="feather icon-menu"></i>
                         </span>
                         <span class="pcoded-mtext">Quản lý Danh mục</span>
                     </a>
@@ -38,7 +38,7 @@
                         <span class="pcoded-mtext">Quản lý Sản phẩm</span>
                     <a href="/admin/taikhoans" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
-                            <i class="feather icon-layers"></i>
+                            <i class="feather icon-box"></i>
                         </span>
                         <span class="pcoded-mtext">Quản lý tài khoản</span>
                     </a>

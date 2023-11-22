@@ -32,25 +32,32 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Thêm mới Sản Phẩm</h5>
+                                    <h5>Thêm mới</h5>
                                 </div>
                                 <div class="card-block">
                                     <form action="" method="post" enctype="multipart/form-data">
+                                        <label for="id_dm">Danh mục</label>
+                                        <select name="id_dm" id="id_dm" class="form-control">
+                                            <option value="0" selected>Tất cả</option>
+                                            <?php foreach ($danhmucs as $danhmuc) : ?>
+                                                <option value="<?= $danhmuc['id'] ?>"><?= $danhmuc['name'] ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
 
-                                        <label for="name">Tên</label>
+                                        <label for="name" class="mt-3">Tên</label>
                                         <input type="text" name="name" class="form-control">
-
-                                        <label for="price" class="mt-3">Giá</label>
-                                        <input type="number" name="price" class="form-control">
 
                                         <label for="img" class="mt-3">Ảnh</label>
                                         <input type="file" name="img" class="form-control">
 
-                                        <label for="mota" class="mt-3">Mô tả</label>
-                                       <textarea name="mota" id="" cols="30" rows="10" class="form-control"></textarea>
+                                        <label for="price" class="mt-3">Giá</label>
+                                        <input type="number" name="price" class="form-control">
 
-                                       <label for="view" class="mt-3">Lượt xem</label>
-                                       <input type="number" name="view" class="form-control">
+                                        <label for="price_sale" class="mt-3">Giá sale</label>
+                                        <input type="number" name="price_sale" id="price_sale" class="form-control">
+
+                                        <label for="mota" class="mt-3">Mô tả</label>
+                                        <textarea name="mota" id="" rows="5" class="form-control"></textarea>
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/sanphams" class="btn btn-primary mt-3">Quay lại d/s</a>
