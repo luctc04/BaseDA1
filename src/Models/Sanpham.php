@@ -8,9 +8,8 @@ class Sanpham extends Model {
     protected $table = 'sanphams';
     protected $columns = [
         'name',
-        'price',
-        'price_sale',
         'img',
+        'xuatsu',
         'mota',
         'id_dm',
     ];

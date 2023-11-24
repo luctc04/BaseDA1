@@ -50,11 +50,8 @@
                                         <label for="img" class="mt-3">Ảnh</label>
                                         <input type="file" name="img" class="form-control">
 
-                                        <label for="price" class="mt-3">Giá</label>
-                                        <input type="number" name="price" class="form-control">
-
-                                        <label for="price_sale" class="mt-3">Giá sale</label>
-                                        <input type="number" name="price_sale" id="price_sale" class="form-control">
+                                        <label for="xuatsu" class="mt-3">Xuất sứ</label>
+                                        <input type="text" name="xuatsu" class="form-control">
 
                                         <label for="mota" class="mt-3">Mô tả</label>
                                         <textarea name="mota" id="" rows="5" class="form-control"></textarea>
