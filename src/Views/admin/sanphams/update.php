@@ -60,11 +60,8 @@
                                         <input type="hidden" name="img_current" id="img_current" class="form-control" value="<?= $sanpham['img'] ?>"><br>
                                         <center><img  src="<?= $sanpham['img'] ?>" alt="" height="200px" width="300px"><br></center>
 
-                                        <label for="price" class="mt-3">Giá</label>
-                                        <input type="number" name="price" id="price" class="form-control" value="<?= $sanpham['price'] ?>">
-
-                                        <label for="price_sale" class="mt-3">Giá sale</label>
-                                        <input type="number" name="price_sale" id="price_sale" class="form-control" value="<?= $sanpham['price_sale'] ?>">
+                                        <label for="xuatsu" class="mt-3">Xuất sứ</label>
+                                        <input type="text" name="xuatsu" class="form-control" value="<?= $sanpham['xuatsu'] ?>">
 
                                         <label for="mota" class="mt-3">Mô tả</label>
                                         <textarea name="mota" id="" rows="5" class="form-control"><?= $sanpham['mota'] ?></textarea>

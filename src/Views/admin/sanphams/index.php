@@ -45,8 +45,7 @@
                                                     <th>Danh mục</th>
                                                     <th>Tên</th>
                                                     <th>Ảnh</th>
-                                                    <th>Giá</th>
-                                                    <th>Giá sale</th>
+                                                    <th>Xuất sứ</th>
                                                     <th>Lượt xem</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -61,15 +60,14 @@
                                                         <td>
                                                             <img src="<?= $sanpham['img'] ?>" alt="" height="80px" width="130px">
                                                         </td>
-                                                        <td><?= $sanpham['price'] ?></td>
-                                                        <td><?= $sanpham['price_sale'] ?></td>
+                                                        <td><?= $sanpham['xuatsu'] ?></td>
                                                         <td><?= $sanpham['view'] ?></td>
                                                         <td>
                                                             <a href="/admin/sanphams/update?id=<?= $sanpham['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
                                                             <form action="/admin/sanphams/delete?id=<?= $sanpham['id'] ?>" method="post">
                                                                 <input type="hidden" name="img" value="<?= $sanpham['img'] ?>">
-                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                                <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                             </form>
                                                         </td>
                                                     </tr>

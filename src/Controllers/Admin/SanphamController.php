@@ -34,8 +34,7 @@ class SanphamController extends Controller{
             $data = [
                 'id_dm' => $_POST['id_dm'],
                 'name' => $_POST['name'],
-                'price' => $_POST['price'],
-                'price_sale' => $_POST['price_sale'] ?: 0,
+                'xuatsu' => $_POST['xuatsu'],
                 'mota' => $_POST['mota'],
             ];
 
@@ -75,8 +74,7 @@ class SanphamController extends Controller{
             $data = [
                 'id_dm' => $_POST['id_dm'],
                 'name' => $_POST['name'],
-                'price' => $_POST['price'],
-                'price_sale' => $_POST['price_sale'] ?: 0,
+                'xuatsu' => $_POST['xuatsu'],
                 'mota' => $_POST['mota'],
             ];
 

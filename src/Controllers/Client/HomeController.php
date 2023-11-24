@@ -7,9 +7,9 @@ use Ductong\BaseMvc\Controller;
 class HomeController extends Controller
 {
     /*
-        Đây là hàm hiển thị danh sách user
+        Đây là hàm hiển thị giao diện client
     */
     public function index() {
-        $this->render('client/home');
+        $this->render('home');
     }
 }

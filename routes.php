@@ -5,13 +5,30 @@ use Ductong\BaseMvc\Controllers\Admin\DanhmucController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\SanphamController;
 use Ductong\BaseMvc\Controllers\Admin\TaikhoanController;
+use Ductong\BaseMvc\Controllers\Client\GiohangController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
+use Ductong\BaseMvc\Controllers\Client\LoginController;
+use Ductong\BaseMvc\Controllers\Client\SanphamctController;
+use Ductong\BaseMvc\Controllers\Client\SanphamfullController;
+use Ductong\BaseMvc\Controllers\Client\ThanhtoanController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
+// client
 $router->addRoute('/', HomeController::class, 'index');
 
+$router->addRoute('/client/sanphamct', SanphamctController::class, 'sanphamct');
+
+$router->addRoute('/client/sanphamfull', SanphamfullController::class, 'sanphamfull');
+
+$router->addRoute('/client/login', LoginController::class, 'login');
+
+$router->addRoute('/client/giohang', GiohangController::class, 'giohang');
+
+$router->addRoute('/client/thanhtoan', ThanhtoanController::class, 'thanhtoan');
+
+// admin
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
