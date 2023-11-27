@@ -20,7 +20,7 @@
     function loadall_sanpham($kyw="", $iddm=0){
         $sql = "select * from sanpham where 1"; 
         if($kyw!=""){
-            $sql.=" and tensp like '%".$kyw."%'";
+            $sql.=" and name like '%".$kyw."%'";
         }
         if($iddm>0){
             $sql.=" and iddm ='".$iddm."'";

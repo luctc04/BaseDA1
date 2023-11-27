@@ -7,6 +7,7 @@
     include "view/header.php";
     include "global.php";
 
+    if(!isset($_SESSION['mycart'])) $_SESSION['mycart'] =[];
 
     $spnew = loadall_sanpham_home();
     $dsdm = loadall_danhmuc();
@@ -99,10 +100,21 @@
                          
             case 'thoat':
                 session_unset();
-                header("location: index.php");
+                include "view/home.php";
+                // header("location: index.php");
                 break;
-            case 'gioithieu':
-                include "view/gioithieu.php";
+            case 'addtocart':
+                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $img = $_POST['img'];
+                    $price_sale= $_POST['price_sale'];
+                    $soluong = 1;
+                    $ttien = $soluong * $price_sale;
+                    $spadd = [$id,$name,$img,$price_sale,$soluong,$ttien];
+                    array_push($_SESSION['mycart'], $spadd);
+                }
+                include "view/cart/viewcart.php";
                 break;
             case 'lienhe':
                 include "view/lienhe.php";

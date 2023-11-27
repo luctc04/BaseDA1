@@ -1,3 +1,7 @@
+<?php
+$dsdm = loadall_danhmuc();
+// $tendm = load_ten_dm($iddm);
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -61,26 +65,19 @@
                       <div class="mega-menu">
                         <div class="mega-left">
                           <span>
-                            <a href="shop.html" class="mega-title">Chó </a>
-                            <a href="shop.html">Golden</a>
-                            <a href="shop.html">Phốc sóc</a>
-                            <a href="shop.html">Alaska </a>
-                            <a href="shop.html">Corgi</a>
-                            <a href="shop.html">Husky</a>
-                            <a href="shop.html">Bull Pháp</a>
-                            <a href="shop.html">Samoyed</a>
-                            <a href="shop.html">Bắc Kinh</a>
+                          <a href="#" class="mega-title">Thú cưng</a>
+                          <?php
+                            foreach ($dsdm as $dm) {
+                              extract($dm);
+                              $linkdm = "index.php?act=sanpham&iddm=" . $id;
+                              echo '
+                                  <a href="' . $linkdm . '">' . $name . '</a>
+                                ';
+                            }
+
+                            ?>
+                          
                           </span>
-                          <span>
-                            <a href="shop.html" class="mega-title">Mèo</a>
-                            <a href="shop.html">Mèo Anh</a>
-                            <a href="shop.html">Mèo Tai Cụp</a>
-                            <a href="shop.html">Mèo chân ngắn </a>
-
-
-                          </span>
-
-
                         </div>
                         <div class="mega-right">
                           <span class="mega-menu-img">
@@ -167,18 +164,18 @@
               <div class="user-meta">
                 <a href="#"><i class="fa fa-cog"></i></a>
                 <ul>
-                  <li><a href="#">Đăng ký</a></li>
-                  <li><a href="#">Đăng nhập</a></li>
-                  <li><a href="#">Checkout</a></li>
+                  <li><a href="index.php?act=dangky">Tài khoản</a></li>
+                  <!-- <li><a href="#">Đăng nhập</a></li>
+                  <li><a href="#">Checkout</a></li> -->
 
                 </ul>
               </div>
               <div class="header-search">
                 <i class="fa fa-search"></i>
                 <div class="header-form">
-                  <form action="#">
-                    <input type="text" placeholder="search" />
-                    <button><i class="fa fa-search"></i></button>
+                  <form action="index.php?act=sanpham" method="post">
+                    <input type="text" name="kyw" placeholder="search" />
+                    <button type="submit"><i class="fa fa-search" ></i></button>
                   </form>
                 </div>
               </div>
