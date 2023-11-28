@@ -59,9 +59,9 @@ $dsdm = loadall_danhmuc();
                 <nav>
                   <ul>
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="gioithieu.php">Giới thiệu</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li class="static"><a href="shop.html">Thú cưng</a>
+                    <li><a href="index.php?act=gioithieu">Giới thiệu</a></li>
+                    <li><a href="index.php?act=blog">Blog</a></li>
+                    <li class="static"><a href="#">Thú cưng</a>
                       <div class="mega-menu">
                         <div class="mega-left">
                           <span>
