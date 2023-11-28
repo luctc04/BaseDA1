@@ -7,7 +7,7 @@
 					<h1>DANH MỤC CỬA HÀNG</h1>
 					<ul>
 						<li><a href="index.php">Trang chủ</a> <span class="divider">|</span></li>
-						<li><a href="#">Thú cưng</a> <span class="divider">|</span></li>
+						<li><a href="#">Thú cưng</a> <span class="divider"></span></li>
 					</ul>
 				</div>
 			</div>
@@ -139,11 +139,42 @@
                                }else{
                                    $mr="mr";
                                }
-                               echo '<div class="boxsp '.$mr.'">
-                                           <div class="row img"><a href="'.$linksp.'"><img src="'.$hinh.'" alt=""></a></div>                      
-                                           <strong  class="gia"><p>$'.$price_sale.'</p></strong>
-                                        <div class="tensphome"><strong> <a  href="'.$linksp.'">'.$name.'</a> </strong> </div>
-                                       </div>';
+                               echo '<div class="col-md-12 ' . $mr . '">
+                                <div class="single-product ">
+                                    
+                                        <div class="product-img">
+                                            <a href="' . $linksp . '">
+                                                <img src="' . $hinh . '" alt="" width="100%" />  
+                                            </a>
+                                            <span class="tag-line">new</span>
+                                            <div class="product-action">
+                                                <div class="button-top">
+                                                    <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                                    <a href="#" ><i class="fa fa-heart"></i></a>
+                                                </div>
+                                                <form action="index.php?act=addtocart" method="post">
+                                                    <input type="hidden" name="id" value="' . $id . '">
+                                                    <input type="hidden" name="name" value="' . $name . '">
+                                                    <input type="hidden" name="img" value="' . $img . '">
+                                                    <input type="hidden" name="price_sale" value="' . $price_sale . '">
+                                                    <div class="button-cart">
+                                                        <!--<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
+                                                        <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                                    </div>
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="' . $linksp . '">' . $name . '</a></h3>
+                                            <div class="price">
+                                                <span>$' . $price_sale . '</span>
+                                                <span class="old">$' . $price . '</span>
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                        </div>';
                                        $i+=1;
                             }
                             

@@ -100,7 +100,7 @@
                          
             case 'thoat':
                 session_unset();
-                include "view/home.php";
+                include "view/dangki.php";
                 // header("location: index.php");
                 break;
             case 'addtocart':
