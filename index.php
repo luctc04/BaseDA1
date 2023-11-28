@@ -68,7 +68,7 @@
                         $thongbao= "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                     }
                 }
-                    include "view/taikhoan/dangky.php";
+                    include "view/home.php";
                     break;
             case 'edit_taikhoan':
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
