@@ -118,15 +118,17 @@ $dsdm = loadall_danhmuc();
                 </nav>
               </div>
             </div>
+
             <div class="col-md-2 col-sm-8 col-xs-7 header-right">
               <div class="my-cart">
                 <div class="total-cart">
-                  <a href="cart.html">
+                  <a href="index.php?act=listcart">
                     <i class="fa fa-shopping-cart"></i>
-                    <span>2</span>
+                    <span id=""><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) :0 ?></span>
                   </a>
                 </div>
-                <ul>
+
+                <!-- <ul>
                   <li>
                     <div class="cart-img">
                       <a href="#"><img alt="" src="img/cart/1.jpg"></a>
@@ -159,7 +161,8 @@ $dsdm = loadall_danhmuc();
                     <a class="cart-button" href="checkout.html">view cart</a>
                     <a class="checkout" href="checkout.html">checkout</a>
                   </li>
-                </ul>
+                </ul> -->
+
               </div>
               <div class="user-meta">
                 <a href="#"><i class="fa fa-cog"></i></a>

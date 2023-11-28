@@ -16,6 +16,9 @@
     if((isset($_GET['act']))&&($_GET['act']!="")){
         $act = $_GET['act'];
         switch ($act) {
+            case 'listcart':
+                include "view/sanpham.php";
+                break;
             case 'sanpham':
                 if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
                     $kyw = $_POST['kyw'];
@@ -52,7 +55,7 @@
                     insert_taikhoan($email, $user, $pass);
                     $thongbao= "Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận!";
                 }
-                include "view/taikhoan/dangky.php";
+                include "view/taikhoan/taikhoan.php";
                 break;
             case 'dangnhap':
                 if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
@@ -68,7 +71,7 @@
                         $thongbao= "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                     }
                 }
-                    include "view/taikhoan/dangky.php";
+                    include "view/home.php";
                     break;
             case 'edit_taikhoan':
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){

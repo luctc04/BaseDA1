@@ -30,10 +30,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="product-curosel">
-                <?php
+       
+        
+
+        
+            <?php 
                 $i = 0;
-                foreach ($spnew as $sp) {
+                foreach ($spnew as $sp) :
                     extract($sp);
                     $linksp = "index.php?act=sanphamct&idsp=" . $id;
                     $hinh = $img_path . $img;
@@ -42,60 +45,61 @@
                     } else {
                         $mr = "mr";
                     }
-                    // echo '<div class="boxsp '.$mr.'">
-                    //             <div class="row img"><a href="'.$linksp.'"><img src="'.$hinh.'" alt=""></a></div>                      
-                    //             <strong  class="gia"><p>$'.$price.'</p></strong>
-                    //             <div class="tensphome"><strong> <a  href="'.$linksp.'">'.$name.'</a> </strong> </div>
-                    //         </div>';
-
-                    // echo '<div class="boxsp '.$mr.'">
-                    //             <div class="row img"><a href="'.$linksp.'"><img src="'.$hinh.'" alt=""></a></div>                      
-                    //             <strong  class="gia"><p>$'.$price.'</p></strong>
-                    //             <div class="tensphome"><strong> <a  href="'.$linksp.'">'.$name.'</a> </strong> </div>
-                    //         </div>';
-
-                    echo '<div class="col-md-12 ' . $mr . '">
+            ?>        
                                 <div class="single-product ">
-                                    
-                                        <div class="product-img">
-                                            <a href="' . $linksp . '">
-                                                <img src="' . $hinh . '" alt="" width="100%" />  
-                                            </a>
-                                            <span class="tag-line">new</span>
-                                            <div class="product-action">
-                                                <div class="button-top">
-                                                    <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
-                                                    <a href="#" ><i class="fa fa-heart"></i></a>
-                                                </div>
-                                                <form action="index.php?act=addtocart" method="post">
-                                                    <input type="hidden" name="id" value="' . $id . '">
-                                                    <input type="hidden" name="name" value="' . $name . '">
-                                                    <input type="hidden" name="img" value="' . $img . '">
-                                                    <input type="hidden" name="price_sale" value="' . $price_sale . '">
-                                                    <div class="button-cart">
-                                                        <!--<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
-                                                        <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
-                                                    </div>
-                                                </form>
-                                                
+                                    <div class="product-img">
+                                        <a href="<?= $linksp ?>">
+                                            <img src="<?= $hinh ?>" alt="" width="100%" />  
+                                        </a>
+                                        <span class="tag-line">new</span>
+                                        <div class="product-action">
+                                            <div class="button-top">
+                                                <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                                <a href="#" ><i class="fa fa-heart"></i></a>
                                             </div>
+                                                <div class="button-cart">
+                                                    <button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                                                </div> 
+                                        </div>     
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
+                                        <div class="price">
+                                            <span>$<?= $price_sale ?></span>
+                                            <span class="old">$<?= $price ?></span>
                                         </div>
-                                        <div class="product-content">
-                                            <h3><a href="' . $linksp . '">' . $name . '</a></h3>
-                                            <div class="price">
-                                                <span>$' . $price_sale . '</span>
-                                                <span class="old">$' . $price . '</span>
-                                            </div>
-                                        </div>
-                                        
-                                        </div>
-                                        </div>';
-                    $i += 1;
-                }
-                ?>
-
-
-            </div>
-        </div>
+                                    </div>
+                            
+                                </div>
+                    <?php 
+                        $i++;
+                        endforeach;
+                    ?>        
+        </div> 
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    function addToCart(productId, productName, productPrice) {
+        // console.log(productId, productName, productPrice);
+        // Sử dụng jQuery
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: './view/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response) {
+                totalProduct.innerText = response;
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
