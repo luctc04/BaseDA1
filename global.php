@@ -1,6 +1,8 @@
 <?php
+//thư mục chưa hình
+    $img_path="upload/";
+    if(isset($_SESSION['taikhoan'])){
+        $taikhoan =$_SESSION['taikhoan'];
+    }
 
-const DB_HOST = 'localhost';
-const DB_DATABASE = 'duan1';
-const DB_USERNAME = 'root';
-const DB_PASSWORD = '';
+?>
