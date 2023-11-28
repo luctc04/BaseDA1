@@ -1,4 +1,4 @@
-<?php require_once'header.php' ?>
+
 <!-- breadcrumb-area start -->
 <div class="breadcrumb-area">
 			<div class="container">
@@ -247,4 +247,4 @@
 			</div>
 		</div>
 		<!-- blog-area end -->
-        <?php require_once'footer.php' ?>
+      

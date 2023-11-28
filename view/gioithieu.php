@@ -1,3 +1,4 @@
+<?php require_once'header.php' ?>
 		<!-- breadcrumb-area start -->
 		<div class="breadcrumb-area">
 			<div class="container">
@@ -38,7 +39,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="section-title">
-						<h2>Our awesome team member</h2>
+						<h2>Thành Viên</h2>
 						<div class="title-icon">
 							<span><i class="fa fa-angle-left"></i> <i class="fa fa-angle-right"></i></span>
 						</div>
@@ -118,3 +119,4 @@
 		</div>
 		<!-- team-area start -->
         <!-- footer start -->
+        <?php require_once'footer.php' ?>

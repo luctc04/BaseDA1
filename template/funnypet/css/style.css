@@ -642,7 +642,10 @@ float: right;
 }
 .title-icon span::after{left:auto;right:-85px}
 .title-icon span i{}
-.single-product{}
+.single-product{
+  margin-right: 10px;
+  float: left;
+}
 .product-img {
   overflow: hidden;
   position: relative;
@@ -700,7 +703,7 @@ img.secondary-img {
 }
 .button-top a {
   background: pink none repeat scroll 0 0;
-  color: #FFF;
+  color: #ea7878;
   display: block;
   height: 36px;
   line-height: 35px;
@@ -708,7 +711,9 @@ img.secondary-img {
   text-align: center;
   width: 40px;
 }
-.button-top a:hover,.button-cart button:hover{background: #fff;color:#333}
+.button-top a:hover,.button-cart button:hover{
+  background: #fff;
+  color:rgb(241, 100, 124)};
 .button-cart {
   clear: both;
   display: block;
@@ -717,7 +722,7 @@ img.secondary-img {
 .button-cart button {
 	background: pink none repeat scroll 0 0;
 	border: 0 none;
-	color: #FFF;
+	color: #fff;
 	height: 36px;
 	line-height: 36px;
 	margin-top: 5px;
@@ -728,6 +733,7 @@ img.secondary-img {
 }
 .button-cart button i {
   margin-right: 7px;
+  color: rgb(237, 131, 149);
 }
 .product-content {
 	background: pink none repeat scroll 0 0;
@@ -738,7 +744,7 @@ img.secondary-img {
 	margin-bottom: 8px;
 }
 .product-content h3 a {
-  color: #eee;
+  color: #fff;
   font-weight: 700;
 }
 .product-content h3 a:hover{color: #fe4847;}
@@ -1030,9 +1036,19 @@ ul.footer-contact li i {
   border-color: #fe4847;
   color: #fff;
 }
-.category-area-2{}
-.category-area-2 .product-curosel .col-md-12 .single-product:last-child {
-  margin-top: 0px;
+.category-area{
+  width: 100%;
+  min-height: 200px;
+}
+.category-area .container .row{
+  width: 100%;
+}
+
+.category-area .container .row .single-product{
+  margin-right: 20px;
+  margin-left: 39px;
+  margin-bottom: 50px;
+  width: 28%;
 }
 /* -------------------------
 10. testimonial-area
@@ -1241,12 +1257,12 @@ h3.sidebar-title::before {
 12. breadcrumb-area
 -------------------------------------*/
 .breadcrumb-area {
-  background: rgba(0, 0, 0, 0) url("img/breadcrumbs.png") no-repeat scroll center top;
+  background: rgb(234, 105, 127) no-repeat scroll center top;
   padding: 215px 0 135px;
   position:relative
 }
 .breadcrumb-area::before {
-  background: #000 none repeat scroll 0 0;
+  background: #fff none repeat scroll 0 0;
   content: "";
   height: 100%;
   opacity: 0.4;
@@ -1266,7 +1282,7 @@ h3.sidebar-title::before {
 }
 .breadcrumb-list ul{}
 .breadcrumb-list ul li {
-  color: #ddd;
+  color: #fff;
   display: inline-block;
   padding: 0 3px;
 }
@@ -1371,7 +1387,7 @@ span.sorting-name {
   visibility: visible;
 }
 .shop-list .product-content h3 a {
-  color: #444;
+  color: #1e1d1d;
   font-size: 18px;
   font-weight: 700;
 }
@@ -1391,8 +1407,8 @@ span.sorting-name {
   float: left;
 }
 .shop-list .button-top a {
-  border: 1px solid #444;
-  color: #444;
+  border: 1px solid rgb(237, 131, 149);
+  color: #fff;
   float: left;
   height: 35px;
   line-height: 33px;
@@ -1401,11 +1417,11 @@ span.sorting-name {
 }
 .shop-list .button-top a:hover,.shop-list .button-cart button:hover {
   border-color: #fe4847;
-  color:#fff;
+  color:rgb(237, 131, 149);
 }
 .shop-list .button-cart button {
-  border: 1px solid #444;
-  color: #444;
+  border: 1px solid rgb(237, 131, 149);
+  color: #fff;
   height: 35px;
   line-height: 16px;
   margin-top: 0;
@@ -1747,7 +1763,7 @@ ul.pro-details-tab li a {
   margin-bottom: 6px;
 }
 .recent-product .product-content h3 a {
-  color: #444;
+  color: #3e3e3e;
 }
 .recent-product .price span.old {
   color: #666;
