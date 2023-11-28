@@ -128,6 +128,12 @@
             case 'blog':
                         include "view/blog.php";
                         break;
+            case 'lienhe':
+                    include "view/lienhe.php";
+                    break;
+                    case 'phukien':
+                        include "view/phukien.php";
+                        break;
             default:
                 include "view/home.php";
                 break;
