@@ -6,8 +6,8 @@
 						<div class="breadcrumb-list">
 							<h1>Contact with us</h1>
 							<ul>
-								<li><a href="index.html">home</a> <span class="divider">|</span></li>
-								<li>Contact us</li>
+								<li><a href="index.html">Trang chủ</a> <span class="divider">|</span></li>
+								<li>Liên hệ với chúng tôi</li>
 							</ul>							
 						</div>
 					</div>
@@ -22,8 +22,8 @@
 					<div class="col-md-8">
 						<div class="contact-form">
 							<div class="message-title">
-								<h1>Drop us a message</h1>
-								<p>We have a great team for supporting our customers. Fill the form to get Great support.</p>
+								<h1>Liên hệ với chúng tôi</h1>
+								<p>Chúng tôi có một đội ngũ tuyệt vời để hỗ trợ khách hàng của chúng tôi. Điền vào biểu mẫu để nhận được sự hỗ trợ tuyệt vời.</p>
 							</div>
 							<div class="row">
 								<form action="https://wphix.com/template/pabna/pabna/mail.php" method="POST">			
@@ -41,7 +41,7 @@
 									<div class="col-md-12">
 										<div class="contact-textarea">
 											<textarea name="message" id="Message" cols="30" rows="10" placeholder="Message"></textarea>
-											<input type="submit" value="submit"/>
+											<input type="submit" value="Gửi"/>
 										</div>								
 									</div>
 								</form>						
@@ -55,8 +55,8 @@
 									<i class="fa fa-phone"></i>
 								</div>
 								<div class="contact-method">
-									<h2>+000-111-2222</h2>
-									<span>Call us Today</span>
+									<h2>0123456789</h2>
+									<span>Số điện thoại</span>
 								</div>
 							</div>
 							<div class="single-contact">
@@ -64,8 +64,8 @@
 									<i class="fa fa-envelope"></i>
 								</div>
 								<div class="contact-method">
-									<h2><a href="https://wphix.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a0b0e0703042a080b1903091e020f070f44040f1e">[email&#160;protected]</a></h2>
-									<span>get in touch with email</span>
+									<h2>FunnyPet@gmail.com</h2>
+									<span>Liên lạc qua Email</span>
 								</div>
 							</div>
 							<div class="single-contact">
@@ -73,20 +73,12 @@
 									<i class="fa fa-commenting"></i>
 								</div>
 								<div class="contact-method">
-									<h2>Live chat</h2>
-									<span>Start live chatting with us</span>
+									<h2>Nhắn tin trực tiếp</h2>
+									<span>Liên hệ ngay với chúng tôi</span>
 								</div>
 							</div>
 						</div>
 					</div>					
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="map-area">
-							<div id="googleMap"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+				
 		<!-- contact-area end -->	

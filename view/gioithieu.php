@@ -1,4 +1,3 @@
-<?php require_once'header.php' ?>
 		<!-- breadcrumb-area start -->
 		<div class="breadcrumb-area">
 			<div class="container">
@@ -119,4 +118,3 @@
 		</div>
 		<!-- team-area start -->
         <!-- footer start -->
-        <?php require_once'footer.php' ?>
