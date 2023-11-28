@@ -86,7 +86,7 @@ $dsdm = loadall_danhmuc();
                         </div>
                       </div>
                     </li>
-                    <li><a href="shop.html">Phụ kiện</a>
+                    <li><a href="index.php?act=phukien">Phụ kiện</a>
                       <div class="mega-menu mega-menu-2">
                         <div class="mega-left">
                           <span>
@@ -113,7 +113,7 @@ $dsdm = loadall_danhmuc();
                       </div>
                     </li>
 
-                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="index.php?act=lienhe">Liên hệ</a></li>
                   </ul>
                 </nav>
               </div>

@@ -1,4 +1,3 @@
-
 		<!-- breadcrumb-area start -->
 		<div class="breadcrumb-area">
 			<div class="container">
@@ -119,4 +118,3 @@
 		</div>
 		<!-- team-area start -->
         <!-- footer start -->
-   
