@@ -119,6 +119,12 @@
             case 'lienhe':
                 include "view/lienhe.php";
                 break;
+            case 'gioithieu':
+                    include "view/gioithieu.php";
+                    break;
+            case 'blog':
+                        include "view/blog.php";
+                        break;
             default:
                 include "view/home.php";
                 break;
