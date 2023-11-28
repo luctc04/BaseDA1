@@ -119,4 +119,3 @@
 		</div>
 		<!-- team-area start -->
         <!-- footer start -->
-        <?php require_once'footer.php' ?>
