@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-list">
-                    <h1>Tài Khoản</h1>
+                    <h1>Tài khoản</h1>
                 </div>
             </div>
         </div>

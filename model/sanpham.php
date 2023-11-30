@@ -7,8 +7,8 @@
         $sql = "delete from sanpham where id=".$id;
         pdo_execute($sql);
     }
-    function loadall_sanpham_top10(){
-        $sql = "select * from sanpham where 1 order by luotxem desc limit 0,10"; 
+    function loadall_sanpham_top5(){
+        $sql = "select * from sanpham where 1 order by luotxem desc limit 0,5"; 
         $listsanpham = pdo_query($sql);
         return $listsanpham;
     }
@@ -58,5 +58,10 @@
         pdo_execute($sql);
     }
     
+    function loadone_sanphamCart ($idList) {
+        $sql = 'SELECT * FROM sanpham WHERE id IN ('. $idList . ')';
+        $sanpham = pdo_query($sql);
+        return $sanpham;
+    }
 
 ?>

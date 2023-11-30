@@ -1,4 +1,3 @@
-
 <div class="breadcrumb-area">
 	<div class="container">
 		<div class="row">
@@ -7,7 +6,7 @@
 					<h1>DANH MỤC CỬA HÀNG</h1>
 					<ul>
 						<li><a href="index.php">Trang chủ</a> <span class="divider">|</span></li>
-						<li><a href="#">Thú cưng</a> <span class="divider">|</span></li>
+						<li><a href="#">Thú cưng</a> <span class="divider"></span></li>
 					</ul>
 				</div>
 			</div>
@@ -38,41 +37,29 @@
 				<aside class="widget widget-categories">
 					<h3 class="sidebar-title">Top yêu thích</h3>
 					<div class="recent-product">
-					<?php
-                            foreach ($dstop10 as $sp) {
-                                extract($sp);
-                                $linksp= "index.php?act=sanphamct&idsp=".$id;
-                                $img= $img_path.$img;
-								echo '<div class="single-product">
-										<div class="product-img">
-											<a href="'.$linksp.'">
-												<img src="'.$img.'" alt="" />
-											</a>
-										</div>
-										<div class="product-content">
-											<h3><a href="'.$linksp.'">'.$name.'</a></h3>
-											<div class="price">
-												<span>$'.$price_sale.'</span>
-												<span class="old">$'.$price.'</span>
-											</div>
-										</div>
-									</div>';
-                            }
-                        ?>
-						<!-- <div class="single-product">
-							<div class="product-img">
-								<a href="product-details.html">
-									<img src="" alt="" />
-								</a>
-							</div>
-							<div class="product-content">
-								<h3><a href="product-details.html">Lorem ipsum dolor</a></h3>
-								<div class="price">
-									<span>$80.00</span>
-									<span class="old">$90.11</span>
+						<?php
+						foreach ($dstop5 as $sp) :
+							extract($sp);
+							$linksp = "index.php?act=sanphamct&idsp=" . $id;
+							$img = $img_path . $img;
+						?>
+							<div class="single-product">
+								<div class="product-img">
+									<a href="<?= $linksp ?>">
+										<img src="<?= $img ?>" alt="" />
+									</a>
+								</div>
+								<div class="product-content">
+									<h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
+									<div class="price">
+										<span><?= number_format((int)$price_sale, 0, ",", ".") ?><u>đ</u></span>
+										<span class="old"><?= number_format((int)$price, 0, ",", ".") ?><u>đ</u></span>
+									</div>
 								</div>
 							</div>
-						</div> -->
+						<?php
+						endforeach;
+						?>
 
 					</div>
 				</aside>
@@ -126,68 +113,63 @@
 						</ul> -->
 					</div>
 
-					<div class="clear"><div class="product-curosel">
-					<?php
-                           $i=0;
-                           foreach ($dssp as $sp) :
-                               extract($sp);
-                               $linksp= "index.php?act=sanphamct&idsp=".$id;
-                               $hinh= $img_path.$img;
-                               if(($i==2)||($i==5)||($i==8)||($i==11)){
-                                   $mr="";
-                               }else{
-                                   $mr="mr";
-                               }
-					?>
-                               <div class="col-md-12 '<?= $mr?>'">
-                                <div class="single-product ">
-                                    
-                                        <div class="product-img">
-                                            <a href="<?= $linksp?>">
-                                                <img src="<?= $hinh?>" alt="" width="100%" />  
-                                            </a>
-                                            <span class="tag-line">new</span>
-                                            <div class="product-action">
-                                                <div class="button-top">
-                                                    <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
-                                                    <a href="#" ><i class="fa fa-heart"></i></a>
-                                                </div>
-                                                <!-- <form action="index.php?act=addtocart" method="post">
-                                                    <input type="hidden" name="id" value="' . $id . '">
-                                                    <input type="hidden" name="name" value="' . $name . '">
-                                                    <input type="hidden" name="img" value="' . $img . '">
-                                                    <input type="hidden" name="price_sale" value="' . $price_sale . '">
-                                                    <div class="button-cart">
-												<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
-                                                        <!-- <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
+					<div class="clear">
+						<div class="product-curosel">
+							<?php
+							$i = 0;
+							foreach ($dssp as $sp) :
+								extract($sp);
+								$linksp = "index.php?act=sanphamct&idsp=" . $id;
+								$hinh = $img_path . $img;
+								if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
+									$mr = "";
+								} else {
+									$mr = "mr";
+								}
+							?>
+								<div class="col-md-12 '<?= $mr ?>'">
+									<div class="single-product ">
+
+										<div class="product-img">
+											<a href="<?= $linksp ?>">
+												<img src="<?= $hinh ?>" alt="" width="100%" />
+											</a>
+											<span class="tag-line">new</span>
+											<div class="product-action">
+												<div class="button-top">
+													<a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+													<a href="#"><i class="fa fa-heart"></i></a>
+												</div>
+                                                    <div class="button-cart"> 
+                                                        <!--<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
+												<!-- <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
                                                     </div>
                                                 </form> -->
-												<div class="button-cart"> 
-                                                       <button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="<?= $linksp?>"><?= $name?></a></h3>
-                                            <div class="price">
-                                                <span><?=  number_format((int)$price_sale, 0, ",", ".")?><u>đ</u></span>
-												<span class="old"><?=  number_format((int)$price, 0, ",", ".")?><u>đ</u></span>
-                                            </div>
-                                        </div>
-                                        
-                                        </div>
-                                        </div>
-                                       
-					<?php
-						$i+=1;
-                        endforeach;
-                            
-                    ?>
-				
-					</div></div>
+												<div class="button-cart">
+													<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												</div>
 
-					<!-- Tab panes -->
+											</div>
+										</div>
+										<div class="product-content">
+											<h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
+											<div class="price">
+												<span><?= number_format((int)$price_sale, 0, ",", ".") ?><u>đ</u></span>
+												<span class="old"><?= number_format((int)$price, 0, ",", ".") ?><u>đ</u></span>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							<?php
+								$i += 1;
+							endforeach;
+
+							?>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

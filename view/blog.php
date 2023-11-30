@@ -247,4 +247,4 @@
 			</div>
 		</div>
 		<!-- blog-area end -->
-      
+        
