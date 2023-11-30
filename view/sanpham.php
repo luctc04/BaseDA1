@@ -109,7 +109,6 @@
 					</div>
 				</aside>
 			</div>
-			<!-- left-sidebar end -->
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="shop-content">
 					<!-- Nav tabs -->
@@ -130,7 +129,7 @@
 					<div class="clear"><div class="product-curosel">
 					<?php
                            $i=0;
-                           foreach ($dssp as $sp) {
+                           foreach ($dssp as $sp) :
                                extract($sp);
                                $linksp= "index.php?act=sanphamct&idsp=".$id;
                                $hinh= $img_path.$img;
@@ -139,15 +138,52 @@
                                }else{
                                    $mr="mr";
                                }
-                               echo '<div class="boxsp '.$mr.'">
-                                           <div class="row img"><a href="'.$linksp.'"><img src="'.$hinh.'" alt=""></a></div>                      
-                                           <strong  class="gia"><p>$'.$price_sale.'</p></strong>
-                                        <div class="tensphome"><strong> <a  href="'.$linksp.'">'.$name.'</a> </strong> </div>
-                                       </div>';
-                                       $i+=1;
-                            }
+					?>
+                               <div class="col-md-12 '<?= $mr?>'">
+                                <div class="single-product ">
+                                    
+                                        <div class="product-img">
+                                            <a href="<?= $linksp?>">
+                                                <img src="<?= $hinh?>" alt="" width="100%" />  
+                                            </a>
+                                            <span class="tag-line">new</span>
+                                            <div class="product-action">
+                                                <div class="button-top">
+                                                    <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                                    <a href="#" ><i class="fa fa-heart"></i></a>
+                                                </div>
+                                                <!-- <form action="index.php?act=addtocart" method="post">
+                                                    <input type="hidden" name="id" value="' . $id . '">
+                                                    <input type="hidden" name="name" value="' . $name . '">
+                                                    <input type="hidden" name="img" value="' . $img . '">
+                                                    <input type="hidden" name="price_sale" value="' . $price_sale . '">
+                                                    <div class="button-cart">
+												<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
+                                                        <!-- <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                                    </div>
+                                                </form> -->
+												<div class="button-cart"> 
+                                                       <button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="<?= $linksp?>"><?= $name?></a></h3>
+                                            <div class="price">
+                                                <span><?=  number_format((int)$price_sale, 0, ",", ".")?><u>đ</u></span>
+												<span class="old"><?=  number_format((int)$price, 0, ",", ".")?><u>đ</u></span>
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                        </div>
+                                       
+					<?php
+						$i+=1;
+                        endforeach;
                             
-                        ?>
+                    ?>
 				
 					</div></div>
 

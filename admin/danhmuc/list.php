@@ -50,23 +50,25 @@
                                             </thead>
 
                                             <tbody>
-                                                <?php foreach ($listdanhmuc as $danhmuc) {
+                                                <?php foreach ($listdanhmuc as $danhmuc) :
                                                     extract($danhmuc);
                                                     $suadm = "index.php?act=suadm&id=".$id;
                                                     $xoadm = "index.php?act=xoadm&id=".$id;
-                                                    echo '<tr>
-                                                            <td>'.$id.'</td>
-                                                            <td>'.$name.'</td>
-                                                            <td>
-                                                                <a href="'.$suadm.'" class="btn btn-primary btn-sm">Cập nhật</a>
-
-                                                                <form action="'.$xoadm.'" method="post">
-                                                                    <button type="submit" class="btn btn-danger btn-sm mt-2">Xóa</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>';
-                                                }
                                                 ?>
+                                                    <tr>
+                                                            <td><?=$id?></td>
+                                                            <td><?=$name?></td>
+                                                            <td>
+                                                                <a href="<?=$suadm?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                                <a onclick="return confirm('Bạn có muốn xóa không?')" href="<?=$xoadm?>" class="btn btn-danger btn-sm">Xóa</a>
+
+                                                                <!-- <form  action="'.$xoadm.'" method="post">
+                                                                    <button type="submit" class="btn btn-danger btn-sm mt-2">Xóa</button>
+                                                                </form> -->
+                                                            </td>
+                                                        </tr>
+                                                
+                                                <?php endforeach; ?>
                                             </tbody>
 
                                         </table>

@@ -5,7 +5,7 @@
 				<div class="breadcrumb-list">
 					<h1>THÔNG TIN CHI TIẾT SẢN PHẨM</h1>
 					<ul>
-						<li><a href="index.html">Trang chủ</a> <span class="divider">|</span></li>
+						<li><a href="/index.php">Trang chủ</a> <span class="divider">|</span></li>
 						<li><a href="shop.html">Danh mục</a> <span class="divider">|</span></li>
 						<li>Thông tin chi tiết sản phẩm</li>
 					</ul>
@@ -140,16 +140,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="related-curosel">
+				</div>
+				<div style="display: flex;width:100%" class="row">
+					
 						<!-- single-product start -->
-						<div class="col-md-12">
+						
 							<?php
 								foreach($sp_cung_loai as $sp_cung_loai){
 									extract($sp_cung_loai);
 									$linksp = "index.php?act=sanphamct&idsp=".$id;
-									echo '<div class="single-product">
+									echo '<div style="flex-wrap: wrap; width: 30%; justify-content: space-between" class="single-product">
 											<div class="product-img">
-												<a href="'.$linksp.'">
+												<a style="height: 250px" href="'.$linksp.'">
 													<img src="'.$img.'" alt="" />
 												</a>
 												<span class="tag-line">new</span>
@@ -198,9 +200,9 @@
 									</div>
 								</div>
 							</div> -->
-						</div>
+						
 
-					</div>
+					
 				</div>
 			</div>
 
@@ -268,19 +270,19 @@
 					<div class="sale-off-carosel">
 						<div class="single-sale">
 							<a href="#">
-								<img src="/img/1.jpg" alt="" />
+								<img src="/img/product/p6.jpg" alt="" />
 								<h2>sale off</h2>
 							</a>
 						</div>
 						<div class="single-sale">
 							<a href="#">
-								<img src="/img/2-removebg-preview.png" alt="" />
+								<img src="/img/product/p10.jpg" alt="" />
 								<h2>sale off</h2>
 							</a>
 						</div>
 						<div class="single-sale">
 							<a href="#">
-								<img src="/img/bg2.jpg" alt="" />
+								<img src="/img/product/p11" alt="" />
 								<h2>sale off</h2>
 							</a>
 						</div>

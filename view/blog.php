@@ -8,7 +8,7 @@
 							<h1>Blog</h1>
 							<ul>
 								<li><a href="/index.php">Trang chủ</a> <span class="divider">|</span></li>
-								<li><a href="/view/blog.php">blog</a></li>
+								<li><a href="index.php?act=blog">blog</a></li>
 							</ul>							
 						</div>
 					</div>
