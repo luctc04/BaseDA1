@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
     include "model/pdo.php";
     include "model/danhmuc.php";
     include "model/sanpham.php";
@@ -115,17 +116,26 @@
                     $user= $_POST['user'];
                     $pass= $_POST['pass'];
                     $checkuser = checkuser($user, $pass);
+
                     if(is_array($checkuser)){
                         $_SESSION['user']= $checkuser;
-                        // $thongbao= "Bạn đã đăng nhập thành công!";
-                        header("location: index.php");
+                    
+                    
+                        
                         
                     }else{
                         $thongbao= "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                     }
                 }
-                    include "view/home.php";
+                header("location: index.php");
+                
+
                     break;
+                case "dangxuat":
+                    unset($_SESSION["user"]);
+                    header("location: index.php");
+                    break;
+                        
             case 'edit_taikhoan':
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
                     $user= $_POST['user'];
@@ -156,8 +166,10 @@
                          
             case 'thoat':
                 session_unset();
-                include "view/taikhoan/taikhoan.php";
+                include "view/home.php";
+                // header("location: index.php");
                 break;
+    
             case 'lienhe':
                 include "view/lienhe.php";
                 break;
@@ -178,10 +190,10 @@
     }else{
         include "view/home.php";
     }
-    
+
     include "view/footer.php";
 
-
+ob_flush();
 ?>
 
             

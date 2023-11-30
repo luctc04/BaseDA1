@@ -35,7 +35,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col">
-                                            <h6 class="m-b-25">Impressions</h6>
+                                            <h6 class="m-b-25">Phụ kiện</h6>
                                             <h3 class="f-w-700 text-c-blue">1,563</h3>
                                             <p class="m-b-0">May 23 - June 01 (2017)</p>
                                         </div>

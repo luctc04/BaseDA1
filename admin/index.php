@@ -1,4 +1,5 @@
-<?php  
+<?php    
+ob_start(); 
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
@@ -128,12 +129,16 @@
                 break;   
 
 
-            /* controller tài khoản */    
+            /* controller tài khoản */   
+            case 'backhome':
+               
+                header('location:http://duan1.test/index.php');
+                break; 
             case 'dskh':
                 $listtaikhoan= loadall_taikhoan();
                 include "taikhoan/list.php";
                 break; 
-
+            
             case 'suatk':
                 if(isset($_GET['id'])&&($_GET['id']>0)){
                     $tk = loadone_taikhoan($_GET['id']);
@@ -197,5 +202,5 @@
 
     include "footer.php";
 
-
+ob_flush(); 
 ?>

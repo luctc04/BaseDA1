@@ -96,7 +96,6 @@
 					</div>
 				</aside>
 			</div>
-			<!-- left-sidebar end -->
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="shop-content">
 					<!-- Nav tabs -->
@@ -141,11 +140,6 @@
 													<a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
 													<a href="#"><i class="fa fa-heart"></i></a>
 												</div>
-												<!-- <form action="index.php?act=addtocart" method="post">
-                                                    <input type="hidden" name="id" value="' . $id . '">
-                                                    <input type="hidden" name="name" value="' . $name . '">
-                                                    <input type="hidden" name="img" value="' . $img . '">
-                                                    <input type="hidden" name="price_sale" value="' . $price_sale . '">
                                                     <div class="button-cart"> 
                                                         <!--<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
 												<!-- <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
@@ -176,8 +170,6 @@
 
 						</div>
 					</div>
-
-					<!-- Tab panes -->
 				</div>
 			</div>
 		</div>

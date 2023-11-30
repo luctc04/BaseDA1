@@ -1873,7 +1873,7 @@ p.checkout-coupon{}
 p.checkout-coupon input[type=text]{height: 36px;
 padding-left: 10px;
 width: 170px;}
-p.checkout-coupon input[type=submit]{background: #333 none repeat scroll 0 0;
+p.checkout-coupon input[type=submit]{background: rgb(253, 115, 138) none repeat scroll 0 0;
 border: medium none;
 border-radius: 0;
 color: #fff;
@@ -2229,7 +2229,7 @@ a.shipping-calculator-button:hover {
   white-space: nowrap;
 }
 .wc-proceed-to-checkout a {
-  background: #252525 none repeat scroll 0 0;
+  background: rgb(253, 115, 138) none repeat scroll 0 0;
   color: #fff;
   display: inline-block;
   font-size: 12px;
@@ -2241,7 +2241,9 @@ a.shipping-calculator-button:hover {
   text-transform: uppercase;
 }
 .wc-proceed-to-checkout a:hover {
-  background: #fe4847 none repeat scroll 0 0;
+  background: #fff none repeat scroll 0 0;
+  color:rgb(253, 115, 138) ;
+  border: 1px solid rgb(226, 92, 114);
 }
 /*-----------------------------------
 16. wishlist-area
@@ -2590,7 +2592,10 @@ a.shipping-calculator-button:hover {
 /*-----------------------------------
 21. blog-area
 -------------------------------------*/
-.blog-area{}
+.blog-area{
+  width: 100%;
+  min-height: 500px;
+}
 .blog-page-main{}
 .blog-page-main .blog-wrapper{margin-bottom:30px}
 .blog-page-main .blog-wrapper:last-child{margin:0}
@@ -3050,4 +3055,8 @@ width: 100%;}
 .modal-product .widget .social-icons li .social-icon.linkedin:hover {
     background: #0097BD;
     border: 1px solid #0097BD;
+}
+.continue-shopping{
+  background-color: #fd738a;
+  color: #fff;
 }
