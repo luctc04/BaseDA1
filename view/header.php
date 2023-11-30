@@ -21,7 +21,7 @@ $dsdm = loadall_danhmuc();
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/funnypet/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/template/funnypet/css/bootstrap.min.css">
   <link rel="stylesheet" href="/template/funnypet/css/animate.css">
   <link rel="stylesheet" href="/template/funnypet/css/jquery-ui.min.css">
   <link rel="stylesheet" href="/template/funnypet/css/meanmenu.min.css">
@@ -30,7 +30,6 @@ $dsdm = loadall_danhmuc();
   <link rel="stylesheet" href="/template/funnypet/css/font-awesome.min.css">
   <link rel="stylesheet" href="/template/funnypet/css/style.css">
   <link rel="stylesheet" href="/template/funnypet/css/responsive.css">
-  <link rel="stylesheet" href="/css/style2.css">
   <script src="/template/funnypet/js/vendor/modernizr-2.8.3.min.js"></script>
 
   <style>
@@ -51,7 +50,7 @@ $dsdm = loadall_danhmuc();
           <div class="row">
             <div class="col-md-2 col-sm-4 col-xs-5">
               <div class="logo">
-                <a href="index.html"><img src="img\2-removebg-preview.png" alt="" /></a>
+                <a href="index.php"><img src="img\2-removebg-preview.png" alt="" /></a>
               </div>
             </div>
             <div class="col-md-8 hidden-xs hidden-sm">
@@ -59,24 +58,21 @@ $dsdm = loadall_danhmuc();
                 <nav>
                   <ul>
                     <li><a href="index.php">Trang chủ</a></li>
-                    <li><a href="index.php?act=gioithieu">Giới thiệu</a></li>
-                    <li><a href="index.php?act=blog">Blog</a></li>
+                    
                     <li class="static"><a href="#">Thú cưng</a>
                       <div class="mega-menu">
                         <div class="mega-left">
                           <span>
                           <a href="#" class="mega-title">Thú cưng</a>
-                          <?php
-                            foreach ($dsdm as $dm) {
-                              extract($dm);
-                              $linkdm = "index.php?act=sanpham&iddm=" . $id;
-                              echo '
-                                  <a href="' . $linkdm . '">' . $name . '</a>
-                                ';
-                            }
-
-                            ?>
-                          
+                            <?php
+                              foreach ($dsdm as $dm) {
+                                extract($dm);
+                                $linkdm = "index.php?act=sanpham&iddm=" . $id;
+                                echo '
+                                    <a href="' . $linkdm . '">' . $name . '</a>
+                                  ';
+                              }
+                              ?>
                           </span>
                         </div>
                         <div class="mega-right">
@@ -90,29 +86,30 @@ $dsdm = loadall_danhmuc();
                       <div class="mega-menu mega-menu-2">
                         <div class="mega-left">
                           <span>
-                            <a href="shop.html">BALO</a>
-                            <a href="shop.html">CÁT VỆ SINH</a>
-                            <a href="shop.html">CHUỒNG</a>
-                            <a href="shop.html">MỸ PHẨM & LÀM ĐẸP</a>
+                            <a href="#">BALO</a>
+                            <a href="#">CÁT VỆ SINH</a>
+                            <a href="#">CHUỒNG</a>
+                            <a href="#">MỸ PHẨM & LÀM ĐẸP</a>
                           </span>
                           <span>
-                            <a href="shop.html">NỆM</a>
-                            <a href="shop.html">ÁO</a>
-                            <a href="shop.html">VÒNG CỔ</a>
-                            <a href="shop.html">ĐỒ CHƠI</a>
-                            <a href="shop.html">DÂY DẮT</a>
+                            <a href="#">NỆM</a>
+                            <a href="#">ÁO</a>
+                            <a href="#">VÒNG CỔ</a>
+                            <a href="#">ĐỒ CHƠI</a>
+                            <a href="#">DÂY DẮT</a>
                           </span>
 
                         </div>
 
                         <div class="mega-right">
                           <span class="mega-menu-img2">
-                            <a href="shop.html"><img alt="" src="/img/product/balo1.jpg"></a>
+                            <a href="#"><img alt="" src="/img/product/balo1.jpg"></a>
                           </span>
                         </div>
                       </div>
                     </li>
-
+                    <li><a href="index.php?act=gioithieu">Giới thiệu</a></li>
+                    <li><a href="index.php?act=blog">Blog</a></li>
                     <li><a href="index.php?act=lienhe">Liên hệ</a></li>
                   </ul>
                 </nav>
@@ -124,7 +121,7 @@ $dsdm = loadall_danhmuc();
                 <div class="total-cart">
                   <a href="index.php?act=listcart">
                     <i class="fa fa-shopping-cart"></i>
-                    <span id=""><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) :0 ?></span>
+                    <span id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) :0 ?></span>
                   </a>
                 </div>
 

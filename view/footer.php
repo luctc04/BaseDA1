@@ -110,7 +110,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="payment-img">
-            <img src="/template/funnypet/img/payment.png" alt="" />
+            <img src="/img/payment.png" alt="" />
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
 
 <!-- all js here -->
 <!-- jquery latest version -->
-<script data-cfasync="false" src="./cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<!-- <script data-cfasync="false" src="./cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
 <script src="/template/funnypet/js/vendor/jquery-1.12.0.min.js"></script>
 <!-- bootstrap js -->
 <script src="/template/funnypet/js/bootstrap.min.js"></script>

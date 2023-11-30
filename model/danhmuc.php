@@ -21,5 +21,5 @@
         $sql= "update danhmuc set name='".$tenloai."' where id=".$id;
         pdo_execute($sql);
     }
-
+    
 ?>

@@ -58,15 +58,15 @@
                                                 <a href="#" ><i class="fa fa-heart"></i></a>
                                             </div>
                                                 <div class="button-cart">
-                                                    <button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                                                    <button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
                                                 </div> 
                                         </div>     
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
                                         <div class="price">
-                                            <span>$<?= $price_sale ?></span>
-                                            <span class="old">$<?= $price ?></span>
+                                        <span><?=  number_format((int)$price_sale, 0, ",", ".")?><u>đ</u></span>
+												<span class="old"><?=  number_format((int)$price, 0, ",", ".")?><u>đ</u></span>
                                         </div>
                                     </div>
                             
@@ -87,7 +87,7 @@
         $.ajax({
             type: 'POST',
             // Đường dẫ tới tệp PHP xử lý dữ liệu
-            url: './view/addToCart.php',
+            url: './view/cart/addToCart.php',
             data: {
                 id: productId,
                 name: productName,
