@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
     include "model/pdo.php";
     include "model/danhmuc.php";
     include "model/sanpham.php";
@@ -59,17 +60,26 @@
                     $user= $_POST['user'];
                     $pass= $_POST['pass'];
                     $checkuser = checkuser($user, $pass);
+
                     if(is_array($checkuser)){
                         $_SESSION['user']= $checkuser;
-                        // $thongbao= "Bạn đã đăng nhập thành công!";
-                        header("location: index.php");
+                    
+                    
+                        
                         
                     }else{
                         $thongbao= "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                     }
                 }
-                    include "view/home.php";
+                header("location: index.php");
+                
+
                     break;
+                case "dangxuat":
+                    unset($_SESSION["user"]);
+                    header("location: index.php");
+                    break;
+                        
             case 'edit_taikhoan':
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
                     $user= $_POST['user'];
@@ -103,19 +113,7 @@
                 include "view/home.php";
                 // header("location: index.php");
                 break;
-            case 'addtocart':
-                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
-                    $id = $_POST['id'];
-                    $name = $_POST['name'];
-                    $img = $_POST['img'];
-                    $price_sale= $_POST['price_sale'];
-                    $soluong = 1;
-                    $ttien = $soluong * $price_sale;
-                    $spadd = [$id,$name,$img,$price_sale,$soluong,$ttien];
-                    array_push($_SESSION['mycart'], $spadd);
-                }
-                include "view/cart/viewcart.php";
-                break;
+    
             case 'lienhe':
                 include "view/lienhe.php";
                 break;
@@ -125,12 +123,9 @@
             case 'blog':
                         include "view/blog.php";
                         break;
-            case 'lienhe':
-                    include "view/lienhe.php";
-                    break;
-                    case 'phukien':
-                        include "view/phukien.php";
-                        break;
+            case 'phukien':
+                include "view/phukien.php";
+                break;
             default:
                 include "view/home.php";
                 break;
@@ -138,10 +133,10 @@
     }else{
         include "view/home.php";
     }
-    
+
     include "view/footer.php";
 
-
+ob_flush();
 ?>
 
             

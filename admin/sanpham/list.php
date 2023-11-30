@@ -53,7 +53,7 @@
 
                                             <tbody>
                                                 <?php
-                                                foreach ($listsanpham as $sanpham) {
+                                                foreach ($listsanpham as $sanpham) :
                                                     extract($sanpham);
                                                     
                                                     $suasp = "index.php?act=suasp&id=" . $id;
@@ -64,27 +64,29 @@
                                                     } else {
                                                         $hinh = "no photo";
                                                     }
+                                                    ?>
 
-                                                    echo '<tr>
-                                                        <td>' . $id . '</td>
-                                                        <td>' . $name . '</td>
-                                                        <td>' . $hinh . '</td>
-                                                        <td>' . $soluong . '</td>
-                                                        <td>' . $price . '</td>
-                                                        <td>' . $price_sale . '</td>
+                                                        <tr>
+                                                        <td><?=$id?></td>
+                                                        <td><?=$name?></td>
+                                                        <td><?=$hinh?></td>
+                                                        <td><?=$soluong?></td>
+                                                        <td><?=$price?></td>
+                                                        <td><?=$price_sale?></td>
                                                         
                                                         <td>
-                                                                <a href="'.$suasp.'" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                                <a href="<?=$suasp?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                                <a onclick="return confirm('Bạn có muốn xóa không?')" href="<?=$xoasp?>" class="btn btn-danger btn-sm">Xóa</a>
 
-                                                                <form action="'.$xoasp.'" method="post">
+                                                                <!-- <form action="'.$xoasp.'" method="post">
                                                                     <button type="submit" class="btn btn-danger btn-sm mt-2">Xóa</button>
-                                                                </form>
+                                                                </form> -->
                                                         </td>
-                                                    </tr>';
-                                                }
+                                                    </tr>
+                                                
 
 
-                                                ?>
+                                                <?php endforeach; ?>
                                             </tbody>
 
                                         </table>

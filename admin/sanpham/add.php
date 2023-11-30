@@ -38,10 +38,12 @@
                                     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
                                         <label for="iddm">Danh mục</label>
                                         <select name="iddm" class="form-control">
+                                        <option value="disable">Chọn</option>
                                             <?php
                                             foreach ($listdanhmuc as $danhmuc) {
                                                 extract($danhmuc);
-                                                echo '<option value="' . $id . '">' . $name . '</option>';
+                                                echo '
+                                                <option value="' . $id . '">' . $name . '</option>';
                                             }
                                             ?>
                                         </select>

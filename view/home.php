@@ -67,8 +67,8 @@
                                                 <input type="hidden" name="img" value="' . $img . '">
                                                 <input type="hidden" name="price_sale" value="' . $price_sale . '">
                                                 <div class="button-cart">
-                                                    <!--<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
-                                                    <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                                    <button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                                                    
                                                 </div>
                                             </form>
                                         </div>     
