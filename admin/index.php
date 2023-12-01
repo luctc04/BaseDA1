@@ -4,6 +4,7 @@ ob_start();
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
+    include "../model/order.php";
     include "../model/binhluan.php";
     include "../model/thongke.php";
     include "header.php";
@@ -131,7 +132,6 @@ ob_start();
 
             /* controller tài khoản */   
             case 'backhome':
-               
                 header('location:http://duan1.test/index.php');
                 break; 
             case 'dskh':
@@ -167,6 +167,27 @@ ob_start();
                 }
                 $listtaikhoan= loadall_taikhoan();
                 include "taikhoan/list.php";
+                break; 
+            // Controller đơn hàng
+            case 'list_donhang':
+                $listdonhang = loadall_donhangadmin();
+                include "donhang/list_donhang.php";
+                break; 
+            case "suadh":
+                if(isset($_GET['id_order'])&&($_GET['id_order']>0)){
+                    $donhang =loadone_donhang($_GET['id_order']);
+                }
+                include "donhang/update_donhang.php";
+                break;
+            case "update_donhang":
+                if(isset($_POST['btn-submit'])&&($_POST['btn-submit'])){
+                    $trangthai= $_POST['trangthai'];
+                    $id_order= $_POST['id_order'];
+                    update_trangthai($id_order, $trangthai);
+                    $thongbao= "Cập nhật thành công";
+                }
+                $listdonhang = loadall_donhangadmin();
+                include "donhang/list_donhang.php";
                 break; 
             /* controller bình luận */    
             case 'dsbl':

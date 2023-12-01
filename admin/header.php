@@ -70,7 +70,7 @@
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="/template/assets/files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                        <img src="/img/admin1.jpg" class="img-radius" alt="User-Profile-Image">
                                         <span>Admin</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
@@ -126,14 +126,7 @@
                                                 </a>
                                             </li>
 
-                                            <!-- <li class>
-                                                <a href="/admin/mausacs" class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon">
-                                                        <i class="feather icon-menu"></i>
-                                                    </span>
-                                                    <span class="pcoded-mtext">Quản Lý Màu Sắc</span>
-                                                </a>
-                                            </li> -->
+                                            
 
                                             <li class>
                                                 <a href="index.php?act=dskh" class="waves-effect waves-dark">
@@ -144,6 +137,32 @@
                                                 </a>
                                             </li>
 
+                                            <li class>
+                                                <a href="index.php?act=list_donhang" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon">
+                                                        <i class="feather icon-menu"></i>
+                                                    </span>
+                                                    <span class="pcoded-mtext">Quản Lý Đơn Hàng</span>
+                                                </a>
+                                            </li>
+
+                                            <li class>
+                                                <a href="index.php?act=dsdh" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon">
+                                                        <i class="feather icon-menu"></i>
+                                                    </span>
+                                                    <span class="pcoded-mtext">Quản Lý Bình Luận </span>
+                                                </a>
+                                            </li>
+
+                                            <li class>
+                                                <a href="index.php?act=dsdh" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon">
+                                                        <i class="feather icon-menu"></i>
+                                                    </span>
+                                                    <span class="pcoded-mtext">Thống Kê</span>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

@@ -46,7 +46,7 @@ if (is_array($tk)) {
                                         <input type="hidden" name="id" value="<?php if (isset($id) && ($id > 0)) echo $id; ?>">
 
                                         <label for="user">User</label>
-                                        <input type="text" name="user" class="form-control" value="<?= $user ?>">
+                                        <input type="text" name="user" class="form-control"  value="<?= $user ?>">
 
                                         <label for="pass" class="mt-3">Password</label>
                                         <input type="password" name="pass" class="form-control" value="<?= $pass ?>">

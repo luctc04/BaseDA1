@@ -71,8 +71,8 @@
                                                         <td><?=$name?></td>
                                                         <td><?=$hinh?></td>
                                                         <td><?=$soluong?></td>
-                                                        <td><?=$price?></td>
-                                                        <td><?=$price_sale?></td>
+                                                        <td><?=  number_format((int)$price, 0, ",", ".")?><u>đ</u></td>
+                                                        <td><?=  number_format((int)$price_sale, 0, ",", ".")?><u>đ</u></td>
                                                         
                                                         <td>
                                                                 <a href="<?=$suasp?>" class="btn btn-primary btn-sm">Cập nhật</a>

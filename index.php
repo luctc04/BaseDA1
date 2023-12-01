@@ -46,8 +46,6 @@
                         $txtemail = $_POST['txtemail'];
                         $txtaddress = $_POST['txtaddress'];
                         $pttt = $_POST['pttt'];
-                        // date_default_timezone_set('Asia/Ho_Chi_Minh');
-                        // $currentDateTime = date('Y-m-d H:i:s');
                         if (isset($_SESSION['user'])) {
                             $id_user = $_SESSION['user']['id'];
                         } else {
@@ -58,20 +56,25 @@
                             addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
                         }
                         unset($_SESSION['cart']);
-                        $_SESSION['success'] = $idBill;
-                        header("Location: index.php?act=success");
+                        $_SESSION['donhang'] = $idBill;
+                        header("Location: index.php?act=donhang");
                     }
                     include "view/cart/order.php";
                 } else {
                     header("Location: index.php?act=listCart");
                 }
                 break;
-            case "success":
-                if (isset($_SESSION['success'])) {
-                    include 'view/cart/success.php';
-                } else {
-                    header("Location: index.php");
+            case 'donhang':
+                $listdonhang=loadall_donhang($taikhoan['id']);
+                include "view/cart/donhang.php";
+                break;
+            case 'donhangct':
+                if(isset($_GET['id_order'])){
+                    $id_order=$_GET['id_order'];
+                    // $list_dhct=loadall_donhangct($id_order);
+                    $onedh= loadone_donhang($id_order);
                 }
+                include "view/cart/donhangct.php";
                 break;
             case 'sanpham':
                 if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
@@ -116,22 +119,19 @@
                     $user= $_POST['user'];
                     $pass= $_POST['pass'];
                     $checkuser = checkuser($user, $pass);
-
+                    if(is_array($checkuser)){
+                        $_SESSION['taikhoan']= $checkuser;
+                    }
                     if(is_array($checkuser)){
                         $_SESSION['user']= $checkuser;
-                    
-                    
-                        
-                        
                     }else{
                         $thongbao= "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                     }
+                    
                 }
                 header("location: index.php");
-                
-
-                    break;
-                case "dangxuat":
+                break;
+            case "dangxuat":
                     unset($_SESSION["user"]);
                     header("location: index.php");
                     break;

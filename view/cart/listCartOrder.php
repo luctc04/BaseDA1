@@ -34,7 +34,7 @@ if (empty($dataDb)) {
                                         <th class="product-price">Giá</th>
                                         <th class="product-quantity">Số lượng</th>
                                         <th class="product-subtotal">Thành tiền</th>
-                                        <th class="product-remove">Xóa</th>
+                                        <th class="product-remove">Action</th>
                                     </tr>
                                 </thead>
                             </table>
