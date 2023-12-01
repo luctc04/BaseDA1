@@ -125,50 +125,37 @@ $dsdm = loadall_danhmuc();
                   </a>
                 </div>
 
-                <!-- <ul>
-                  <li>
-                    <div class="cart-img">
-                      <a href="#"><img alt="" src="img/cart/1.jpg"></a>
-                    </div>
-                    <div class="cart-info">
-                      <h4><a href="#">Vestibulum suscipit</a></h4>
-                      <span>£165.00 <span>x 1</span></span>
-                    </div>
-                    <div class="del-icon">
-                      <i class="fa fa-times-circle"></i>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="cart-img">
-                      <a href="#"><img alt="" src="img/cart/1.jpg"></a>
-                    </div>
-                    <div class="cart-info">
-                      <h4><a href="#">Vestibulum suscipit</a></h4>
-                      <span>£165.00 <span>x 1</span></span>
-                    </div>
-                    <div class="del-icon">
-                      <i class="fa fa-times-circle"></i>
-                    </div>
-                  </li>
-                  <li class="cart-border">
-                    <div class="subtotal-text">Subtotal: </div>
-                    <div class="subtotal-price">£300.00</div>
-                  </li>
-                  <li>
-                    <a class="cart-button" href="checkout.html">view cart</a>
-                    <a class="checkout" href="checkout.html">checkout</a>
-                  </li>
-                </ul> -->
-
               </div>
-              <div class="user-meta">
-                <a href="#"><i class="fa fa-cog"></i></a>
-                <ul>
-                  <li><a href="index.php?act=dangky">Tài khoản</a></li>
-                  <!-- <li><a href="#">Đăng nhập</a></li>
-                  <li><a href="#">Checkout</a></li> -->
-
-                </ul>
+                <div class="user-meta" style="color: #fff; font-weight: 700">
+                <?php
+                  if(isset($_SESSION['user'])){
+                    echo "<p>". $_SESSION['user']['user'];
+                    if($_SESSION['user']['role']==1){
+                      echo'
+                      <ul style="margin-top:20px">
+                      <li><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a></li>
+                      <li><a href="admin/index.php">Truy cập Admin</a></li>
+                      <li><a href="index.php?act=dangxuat">Đăng Xuất</a></li>
+                      
+                      </ul>';    
+                    }else{
+                      echo '
+                      <ul style="margin-top:20px">
+                      <li><a href="index.php?act=donhang">Đơn hàng</a></li>
+                      <li><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a></li>
+                      <li><a href="index.php?act=dangxuat">Đăng Xuất</a></li>
+                      </ul>
+                      ';
+                    }
+                  }else{
+                  echo  '<a href="#"><i class="fa fa-cog"></i></a>
+                    <ul style="margin-top:20px">
+                    <li><a href="index.php?act=donhang">Đơn hàng</a></li>
+                      <li><a href="index.php?act=dangky">Tài khoản</a></li>
+                      <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
+                    </ul>';
+                  }
+                ?>
               </div>
               <div class="header-search">
                 <i class="fa fa-search"></i>
