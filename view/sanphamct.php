@@ -119,13 +119,16 @@
 
 												<div class="review-form-wrapper">
 													<h3>Bình luận</h3>
-													<form action="#">
-														<div class="your-rating">
-
-														</div>
-														<textarea id="product-message" cols="30" rows="10" placeholder="Your Rating"></textarea>
-														<input type="submit" value="submit" />
-													</form>
+													<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $("#binhluan").load("view/binhluan/binhluanform.php", {idpro: <?=$id?>});
+                        
+                    });
+                </script>
+                <div class="row  " id="binhluan">
+                    
+                </div>
 												</div>
 											</div>
 										</div>
