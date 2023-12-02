@@ -126,8 +126,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                 }
+                if (isset($_SESSION['user']) && $_SESSION['taikhoan']['role'] == 1) {
+                    header("location:/admin/index.php");
+                }else{
+                    if (isset($_SESSION['user']) && $_SESSION['taikhoan']['role'] == 0) {
+                        header("location: index.php");
+                    }
+                }
             }
-            header("location: index.php");
             break;
         case "dangxuat":
             unset($_SESSION["user"]);
@@ -160,12 +166,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
             }
             include "view/taikhoan/quenmk.php";
-            break;
-
-        case 'thoat':
-            session_unset();
-            include "view/home.php";
-            // header("location: index.php");
             break;
 
         case 'lienhe':

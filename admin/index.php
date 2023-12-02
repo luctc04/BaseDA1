@@ -1,5 +1,7 @@
-<?php    
+<?php   
+session_start(); 
 ob_start(); 
+
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
@@ -129,11 +131,13 @@ ob_start();
                 include "sanpham/list.php";
                 break;   
 
-
             /* controller tài khoản */   
-            case 'backhome':
+            case "dangxuat":
+                unset($_SESSION["user"]);
+                // header("location: index.php");
                 header('location:http://duan1.test/index.php');
-                break; 
+                break;
+                
             case 'dskh':
                 $listtaikhoan= loadall_taikhoan();
                 include "taikhoan/list.php";
