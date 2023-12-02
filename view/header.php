@@ -36,6 +36,14 @@ $dsdm = loadall_danhmuc();
     .mr{
     margin-right: 2%;
   }
+  .row{
+
+  }
+  .thongbao{
+
+    color: red;
+    font-size: 15px;
+  }
   </style>
 
 </head>

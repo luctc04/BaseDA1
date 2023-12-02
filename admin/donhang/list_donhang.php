@@ -67,9 +67,22 @@
                                                         <td><?= $email ?></td>
                                                         <td><?= $diachi ?></td>
                                                         <td><?= number_format((int)$tongtien, 0, ",", ".") ?><u>đ</u></td>
-                                                        <td><?= $pttt ?></td>
+                                                        <td><?php 
+                                                            if($pttt==1){echo "Thanh toán khi nhận hàng";}else{
+                                                                if($pttt ==2){echo "Chuyển khoản";}
+                                                            }
+                                                        ?></td>
                                                         <td><?= $ngaydathang ?></td>
-                                                        <td><?= $trangthai ?></td>
+                                                        <td><?php
+                                                            if($trangthai==1){echo "Đang chờ duyệt";}else{
+                                                                if($trangthai ==2){echo "Đã xác nhận";}else{
+                                                                    if($trangthai ==3){echo "Đang vận chuyển";}else{
+                                                                        if($trangthai ==4){echo "Hoàn thành";}
+                                                                    }
+                                                                }
+                                                            }
+                                                        ?>
+                                                        </td>
                                                         <td>
                                                             <a href="<?= $suadh ?>">
                                                                 <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button>
