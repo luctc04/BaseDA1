@@ -90,32 +90,6 @@ $dsdm = loadall_danhmuc();
                         </div>
                       </div>
                     </li>
-                    <li><a href="index.php?act=phukien">Phụ kiện</a>
-                      <div class="mega-menu mega-menu-2">
-                        <div class="mega-left">
-                          <span>
-                            <a href="#">BALO</a>
-                            <a href="#">CÁT VỆ SINH</a>
-                            <a href="#">CHUỒNG</a>
-                            <a href="#">MỸ PHẨM & LÀM ĐẸP</a>
-                          </span>
-                          <span>
-                            <a href="#">NỆM</a>
-                            <a href="#">ÁO</a>
-                            <a href="#">VÒNG CỔ</a>
-                            <a href="#">ĐỒ CHƠI</a>
-                            <a href="#">DÂY DẮT</a>
-                          </span>
-
-                        </div>
-
-                        <div class="mega-right">
-                          <span class="mega-menu-img2">
-                            <a href="#"><img alt="" src="/img/product/balo1.jpg"></a>
-                          </span>
-                        </div>
-                      </div>
-                    </li>
                     <li><a href="index.php?act=gioithieu">Giới thiệu</a></li>
                     <li><a href="index.php?act=blog">Blog</a></li>
                     <li><a href="index.php?act=lienhe">Liên hệ</a></li>
