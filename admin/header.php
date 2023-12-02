@@ -21,6 +21,11 @@
 
     <link rel="stylesheet" type="text/css" href="/template/assets/files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="/template/assets/files/assets/css/widget.css">
+    <style>
+        .sangphai{
+            margin-left: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -77,8 +82,8 @@
                                     <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                      
                                         <li>
-                                            <a href="index.php?act=backhome">
-                                                <i class="feather icon-log-out"></i>  Quay lại trang chủ
+                                            <a href="index.php?act=dangxuat">
+                                                <i class="feather icon-log-out"></i>  Đăng xuất
                                             </a>
                                         </li>
                                     </ul>
@@ -156,7 +161,7 @@
                                             </li>
 
                                             <li class>
-                                                <a href="index.php?act=dsdh" class="waves-effect waves-dark">
+                                                <a href="index.php?act=thongke" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
                                                         <i class="feather icon-menu"></i>
                                                     </span>
