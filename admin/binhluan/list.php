@@ -1,52 +1,81 @@
-<div class="row">
-            <div class="row formtitle">
-                <h1>DANH SÁCH BÌNH LUẬN</h1>
-            </div>
-            <div class="row formcontent">      
-                <div class="row mb10 formdsloai" >
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Id</th>
-                            <th>Nội dung</th>
-                            <th>Iduser</th>
-                            <th>Idpro</th>
-                            <th>Ngày bình luận</th>
-                            <th></th>
-                        </tr>
-                        <?php   
-                            foreach($listbinhluan as $binhluan){
-                                extract($binhluan);
-                                $suabl = "index.php?act=suabl&id=".$id;
-                                $xoabl = "index.php?act=xoabl&id=".$id;
-                                echo '<tr>
-                                            <td><input type="checkbox" name="" id=""></td>
-                                            <td>'.$id.'</td>
-                                            <td>'.$noidung.'</td>
-                                            <td>'.$iduser.'</td>
-                                            <td>'.$idpro.'</td>
-                                            <td>'.$ngaybinhluan.'</td>
-
-                                            <td>
-                                                
-                                                <a href="'.$xoabl.'"><input type="button" value="Xóa"></a>
-                                            </td>
-                                        </tr>';
-                            }
-                        
-                        
-                        ?>
-                        
-                        
-                    </table>
-
-                </div>
-                <div class="row mb10" >
-                    <input type="button" value="Chọn tất cả">
-                    <input type="button" value="Bỏ chọn tất cả">
-                    <input type="button" value="Xóa các mục đã chọn">
-                    
+<div class="pcoded-content">
+    <div class="page-header card">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <i class="feather icon-layers bg-c-blue"></i>
+                    <div class="d-inline">
+                        <h5>Bình Luận</h5>
+                    </div>
                 </div>
             </div>
-        </div>        
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class=" breadcrumb breadcrumb-title">
+                        <li class="breadcrumb-item">
+                            <a href="index.php"><i class="feather icon-home"></i></a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Quản lý bình luận</a> </li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="page-body">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Danh sách bình luận</h5>
+                                </div>
+                                <div class="card-block">
+                                    <div class="dt-responsive table-responsive">
+                                        <table id="simpletable" class="table table-striped table-bordered nowrap">
+                                            <thead>
+                                                <th>Id</th>
+                                                <th>Nội dung</th>
+                                                <th>Iduser</th>
+                                                <th>Idpro</th>
+                                                <th>Ngày bình luận</th>
+                                                <th>Action</th>
+                                            </thead>
+
+                                            <tbody>
+                                            <?php
+                                                foreach ($listbinhluan as $binhluan) :
+                                                    extract($binhluan);
+                                                    $xoabl = "index.php?act=xoabl&id=" . $id;
+                                                ?>
+
+                                                    <tr>
+                                                        <td><?= $id ?></td>
+                                                        <td><?= $noidung ?></td>
+                                                        <td><?= $iduser ?></td>
+                                                        <td><?= $idpro ?></td>
+                                                        <td><?= $ngaybinhluan ?></td>
+
+                                                        <td>
+                                                            <a onclick="return confirm('Bạn có muốn xóa không?')" href="<?= $xoabl ?>" class="btn btn-danger btn-sm">Xóa</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
