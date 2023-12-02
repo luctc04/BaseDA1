@@ -16,7 +16,7 @@
 <!-- breadcrumb-area end -->
 <!-- cart-main-area start -->
 <?php
-if (empty($dataDb)) { 
+if (empty($dataDb)) {
 ?>
 
     <div class="cart-main-area">
@@ -77,8 +77,6 @@ if (empty($dataDb)) {
                                                 break;
                                             }
                                         }
-
-
                                     ?>
                                         <tr>
                                             <td class="product-id"><?= $key + 1 ?></td>
@@ -105,7 +103,7 @@ if (empty($dataDb)) {
                                     endforeach;
                                     ?>
                                     <tr>
-                                        <td colspan="5"  class="product-name">
+                                        <td colspan="5" class="product-name">
                                             <h4>Tổng tiền hàng:</h4>
                                         </td>
                                         <td colspan="1" align="center" class="product-price">
@@ -115,7 +113,7 @@ if (empty($dataDb)) {
                                                 </span>
                                             </h4>
                                         </td>
-                                        <td colspan="1" >
+                                        <td colspan="1">
                                             <div class="wc-proceed-to-checkout">
                                                 <a href="index.php?act=order" name="order">Đặt hàng</a>
                                             </div>

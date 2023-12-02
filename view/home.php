@@ -30,57 +30,54 @@
             </div>
         </div>
         <div class="row">
-       
-        
+            <?php
+            $i = 0;
+            foreach ($spnew as $sp) :
+                extract($sp);
+                $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                $hinh = $img_path . $img;
+                if (($i == 2) || ($i == 5) || ($i == 8)) {
+                    $mr = "";
+                } else {
+                    $mr = "mr";
+                }
+            ?>
+                <div class="single-product ">
+                    <div class="product-img">
+                        <a href="<?= $linksp ?>">
+                            <img src="<?= $hinh ?>" alt="" width="100%" />
+                        </a>
+                        <span class="tag-line">new</span>
+                        <div class="product-action">
+                            <div class="button-top">
+                                <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+                                <a href="#"><i class="fa fa-heart"></i></a>
+                            </div>
+                            <div class="button-cart">
+                                <button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
+                        <div class="price">
+                            <span><?= number_format((int)$price_sale, 0, ",", ".") ?><u>đ</u></span>
+                            <span class="old"><?= number_format((int)$price, 0, ",", ".") ?><u>đ</u></span>
+                        </div>
+                    </div>
 
-        
-            <?php 
-                $i = 0;
-                foreach ($spnew as $sp) :
-                    extract($sp);
-                    $linksp = "index.php?act=sanphamct&idsp=" . $id;
-                    $hinh = $img_path . $img;
-                    if (($i == 2) || ($i == 5) || ($i == 8)) {
-                        $mr = "";
-                    } else {
-                        $mr = "mr";
-                    }
-            ?>        
-                                <div class="single-product ">
-                                    <div class="product-img">
-                                        <a href="<?= $linksp ?>">
-                                            <img src="<?= $hinh ?>" alt="" width="100%" />  
-                                        </a>
-                                        <span class="tag-line">new</span>
-                                        <div class="product-action">
-                                            <div class="button-top">
-                                                <a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
-                                                <a href="#" ><i class="fa fa-heart"></i></a>
-                                            </div>
-                                                <div class="button-cart">
-                                                    <button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-                                                </div> 
-                                        </div>     
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
-                                        <div class="price">
-                                        <span><?=  number_format((int)$price_sale, 0, ",", ".")?><u>đ</u></span>
-												<span class="old"><?=  number_format((int)$price, 0, ",", ".")?><u>đ</u></span>
-                                        </div>
-                                    </div>
-                            
-                                </div>
-                    <?php 
-                        $i++;
-                        endforeach;
-                    ?>        
-        </div> 
+                </div>
+            <?php
+                $i++;
+            endforeach;
+            ?>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
     let totalProduct = document.getElementById('totalProduct');
+
     function addToCart(productId, productName, productPrice) {
         // console.log(productId, productName, productPrice);
         // Sử dụng jQuery

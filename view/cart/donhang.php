@@ -34,21 +34,29 @@
                             </thead>
                             <tbody id="order">
                                 <?php
-                                    foreach ($listdonhang as $key => $donhang) :
-                                        extract($donhang);
-                                        $link_dhct = "index.php?act=donhangct&id_order=".$donhang['id_order'];
+                                foreach ($listdonhang as $key => $donhang) :
+                                    extract($donhang);
+                                    $link_dhct = "index.php?act=donhangct&id_order=" . $donhang['id_order'];
                                 ?>
                                     <tr>
-                                        <td class="product-id"><?=$key+1??""?></td>
-                                        <td class="product-name"><?=$hoten ??""?></td>
-                                        <td class="product-number"><?=$sdt ??""?></td>
-                                        <td class="product-address"><?=$diachi ??""?></td>
-                                        <td class="product-quantity"><?= number_format((int)$tongtien , 0, ",", ".") ??""?> <u> đ</u></td>
+                                        <td class="product-id"><?= $key + 1 ?? "" ?></td>
+                                        <td class="product-name"><?= $hoten ?? "" ?></td>
+                                        <td class="product-number"><?= $sdt ?? "" ?></td>
+                                        <td class="product-address"><?= $diachi ?? "" ?></td>
+                                        <td class="product-quantity"><?= number_format((int)$tongtien, 0, ",", ".") ?? "" ?> <u> đ</u></td>
                                         <td class="product-subtotal">
-                                            <?= $trangthai ?>
+                                            <?php
+                                            if ($trangthai == 1) {echo "Đang chờ duyệt";} else {
+                                                if ($trangthai == 2) {echo "Đã xác nhận";} else {
+                                                    if ($trangthai == 3) {echo "Đang vận chuyển";} else {
+                                                        if ($trangthai == 4) {echo "Hoàn thành";}
+                                                    }
+                                                }
+                                            }
+                                            ?>
                                         </td>
                                         <td class="product-remove">
-                                            <a href="<?=$link_dhct?>">Chi tiết</a>
+                                            <a href="<?= $link_dhct ?>">Chi tiết</a>
                                         </td>
                                     </tr>
                                 <?php

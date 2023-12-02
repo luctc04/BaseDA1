@@ -69,10 +69,19 @@
 
                                         <label for="trangthai" class="mt-3">Trạng thái</label>
                                         <select name="trangthai" id="" class="form-control">
-                                            <option <?= $donhang['trangthai']  ?>  value="1" selected>Đang chờ duyệt</option>
-                                            <option <?= $donhang['trangthai']    ?>  value="2" selected>Đã xác nhận</option>
-                                            <option <?= $donhang['trangthai'] ?>  value="3" selected>Đang vận chuyển </option>
-                                            <option <?= $donhang['trangthai'] ?>  value="4" selected>Hoàn thành</option>
+                                        <?php
+                                                            if($trangthai==1){echo '<option '.$donhang['trangthai'].'  value="1" >Đang chờ duyệt</option> <option '.$donhang['trangthai'].'  value="2" >Đã xác nhận</option>';}else{
+                                                                if($trangthai ==2){echo '<option '.$donhang['trangthai'].'  value="2" >Đã xác nhận</option>';}else{
+                                                                    if($trangthai ==3){echo '<option '.$donhang['trangthai'].'  value="3" >Đang vận chuyển</option>';}else{
+                                                                        if($trangthai ==4){echo '<option '.$donhang['trangthai'].'  value="4" >Hoàn thành</option>';}
+                                                                    }
+                                                                }
+                                                            }
+                                                        ?>
+                                            <option <?= $donhang['trangthai'] ?>  value="1" >Đang chờ duyệt</option>
+                                            <option <?= $donhang['trangthai'] ?>  value="2" >Đã xác nhận</option>
+                                            <option <?= $donhang['trangthai'] ?>  value="3" >Đang vận chuyển </option>
+                                            <option <?= $donhang['trangthai'] ?>  value="4" >Hoàn thành</option>
                                         </select><br>
 
                                         <input type="submit" name="btn-submit" class="btn btn-info mt-3" value="Submit">
