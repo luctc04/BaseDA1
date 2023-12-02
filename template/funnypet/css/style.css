@@ -2623,8 +2623,10 @@ a.shipping-calculator-button:hover {
 }
 .search-form button:hover{background:#FE4847}
 .blog-page-main .col-md-6{margin-bottom:30px}
+.blog-page-main .col-md-6-1minh{margin-bottom:30px}
 .blog-page-main .col-md-4{margin-bottom:30px}
 .blog-page-main .col-md-6:nth-last-child(-n+2){margin-bottom:0px}
+.blog-page-main .col-md-6-1minh:nth-last-child(-n+2){margin-bottom:0px}
 .blog-page-main .col-md-4:nth-last-child(-n+3){margin-bottom:0px}
 .blog-pagination {
   border-top: 1px solid #ddd;
