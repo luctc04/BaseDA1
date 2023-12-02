@@ -36,8 +36,9 @@ $dsdm = loadall_danhmuc();
     .mr{
     margin-right: 2%;
   }
-  .row{
-
+  .col-md-6-1minh{
+    width: 550px;
+    margin-left: 25%;
   }
   .thongbao{
 
@@ -115,7 +116,6 @@ $dsdm = loadall_danhmuc();
                     if($_SESSION['user']['role']==1){
                       echo'
                       <ul style="margin-top:20px">
-                      <li><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a></li>
                       <li><a href="admin/index.php">Truy cập Admin</a></li>
                       <li><a href="index.php?act=dangxuat">Đăng Xuất</a></li>
                       
