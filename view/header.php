@@ -47,6 +47,12 @@ $dsdm = loadall_danhmuc();
   }
   .mau{
     background-color: #FFAEBC;
+  }.soluong1{
+    padding: 6.9px;
+    text-align: center;
+  }
+  .soluong1{
+    border: 1px solid palevioletred;
   }
   </style>
 

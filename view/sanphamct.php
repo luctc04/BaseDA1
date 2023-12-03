@@ -68,11 +68,9 @@
 							<div class="product-action">
 								<p>Số lượng: <?= $soluong ?></p>
 								<div class="cart-plus">
-									<form action="index.php?act=sanphamct&idsp=<?= $id?>" method="post">
-										<div class="">
-											<!-- <input type="hidden" name="id" value=""> -->
-											<!-- <input type="hidden" name="price_sale" value="<?= $price_sale ?>"> -->
-											<input type="number" name="soluong" min="1" max="<?=$soluong?>" value="1" />
+									<form action="" method="post">
+										<div class="soluong">
+											<input class="soluong1" type="number" name="soluong" min="1" max="<?= $soluong ?>" value="1" />
 										</div>
 									</form>
 								</div>
@@ -228,3 +226,30 @@
 		</div>
 	</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+	let totalProduct = document.getElementById('totalProduct');
+
+	function addToCart(productId, productName, productPrice) {
+		// console.log(productId, productName, productPrice, productSoluong);
+		// Sử dụng jQuery
+		$.ajax({
+			type: 'POST',
+			// Đường dẫ tới tệp PHP xử lý dữ liệu
+			url: './view/cart/add_sp.php',
+			data: {
+				id: productId,
+				name: productName,
+				price: productPrice,
+			},
+			success: function(response) {
+				totalProduct.innerText = response;
+				alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		});
+	}
+</script>

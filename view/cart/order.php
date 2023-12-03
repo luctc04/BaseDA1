@@ -188,7 +188,7 @@
                                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                         <div class="panel-body">
                                             <p><input type="radio" name="pttt" id="" value="1" checked required> Thanh toán khi giao hàng</p>
-                                            <p><input type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                            <p><input type="radio" name="pttt" id="" value="2" required> Thanh toán MOMO ATM</p>
                                         </div>
                                     </div>
                                 </div>

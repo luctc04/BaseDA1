@@ -56,10 +56,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     foreach ($cart as $item) {
                         addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
                     }
-                    unset($_SESSION['cart']);
-                    $_SESSION['donhang'] = $idBill;
-                    require_once 'PHPMailer/sendmail.php';
-                    header("Location: index.php?act=donhang");
+
+                    if ($_POST['pttt'] == 2) {
+                        unset($_SESSION['cart']);
+                        $_SESSION['donhang'] = $idBill;
+                        require_once 'PHPMailer/sendmail.php';
+                        header("location:view/momo/xulythanhtoanmomo.php");
+                    }
+                    if ($_POST['pttt'] == 1) {
+                        unset($_SESSION['cart']);
+                        $_SESSION['donhang'] = $idBill;
+                        require_once 'PHPMailer/sendmail.php';
+                        header("Location: index.php?act=donhang");
+                    }
+                    
                 }
                 include "view/cart/order.php";
             } else {
@@ -136,7 +146,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 if (isset($_SESSION['user']) && $_SESSION['taikhoan']['role'] == 1) {
                     header("location:/admin/index.php");
-                }else{
+                } else {
                     if (isset($_SESSION['user']) && $_SESSION['taikhoan']['role'] == 0) {
                         header("location: index.php");
                     }
