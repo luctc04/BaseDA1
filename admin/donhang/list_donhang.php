@@ -55,7 +55,7 @@
                                                 <?php
                                                 foreach ($listdonhang as $donhang) :
                                                     extract($donhang);
-                                                    // $donhangct = "index.php?act=donhangct&id=" . $id;
+                                                    $link_dhct = "index.php?act=list_donhangct&id_order=" . $donhang['id_order'];
                                                     $suadh = "index.php?act=suadh&id_order=".$id_order;
                                                 ?>
 
@@ -87,7 +87,7 @@
                                                             <a href="<?= $suadh ?>">
                                                                 <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button>
                                                             </a>
-                                                            <a href="<?= $danhsachbienthe ?>">
+                                                            <a href="<?= $link_dhct ?>">
                                                                 <button class="btn btn-eye btn-sm trash btn btn-primary " type="button" title="Xem" >
                                                                     <i class="fas fa-eye"></i>
                                                                 </button>

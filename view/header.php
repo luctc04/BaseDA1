@@ -45,6 +45,9 @@ $dsdm = loadall_danhmuc();
     color: red;
     font-size: 15px;
   }
+  .mau{
+    background-color: #FFAEBC;
+  }
   </style>
 
 </head>

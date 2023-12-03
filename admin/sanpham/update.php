@@ -4,7 +4,7 @@
     }
     $hinhpath = "../upload/". $img;
     if ( is_file($hinhpath)){
-        $hinh = '<img src="'.$hinhpath.'" width="280" height="160" />';
+        $hinh = '<img src="'.$hinhpath.'" width="240" />';
     }else{
         $hinh = "No photo";
     }
