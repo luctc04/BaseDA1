@@ -22,7 +22,7 @@
                     <div class="table-content table-responsive">
                         <table>
                             <thead>
-                                <tr>
+                                <tr class="mau">
                                     <th class="product-id">#</th>
                                     <th class="product-thumbnail">Họ tên</th>
                                     <th class="product-id">Sđt</th>

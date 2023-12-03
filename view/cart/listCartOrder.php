@@ -27,7 +27,7 @@ if (empty($dataDb)) {
                         <div class="table-content table-responsive">
                             <table>
                                 <thead>
-                                    <tr>
+                                    <tr class="mau">
                                         <th class="product-thumbnail">#</th>
                                         <th class="product-thumbnail">Ảnh</th>
                                         <th class="product-name">Sản phẩm</th>
@@ -55,7 +55,7 @@ if (empty($dataDb)) {
                         <div class="table-content table-responsive">
                             <table>
                                 <thead>
-                                    <tr>
+                                    <tr class="mau">
                                         <th class="product-thumbnail">#</th>
                                         <th class="product-thumbnail">Ảnh</th>
                                         <th class="product-name">Sản phẩm</th>

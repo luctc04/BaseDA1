@@ -60,7 +60,7 @@
                                                     $xoasp = "index.php?act=xoasp&id=" . $id;
                                                     $hinhpath = "../upload/" . $img;
                                                     if (is_file($hinhpath)) {
-                                                        $hinh = "<img src='" . $hinhpath . "' height='75' width='120'>";
+                                                        $hinh = "<img src='" . $hinhpath . "' width='90px'>";
                                                     } else {
                                                         $hinh = "no photo";
                                                     }

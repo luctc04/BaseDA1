@@ -45,6 +45,15 @@ $dsdm = loadall_danhmuc();
     color: red;
     font-size: 15px;
   }
+  .mau{
+    background-color: #FFAEBC;
+  }.soluong1{
+    padding: 6.9px;
+    text-align: center;
+  }
+  .soluong1{
+    border: 1px solid palevioletred;
+  }
   </style>
 
 </head>

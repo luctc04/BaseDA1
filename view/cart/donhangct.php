@@ -23,7 +23,7 @@
                     <div class="table-content table-responsive">
                         <table>
                             <thead>
-                                <tr>
+                                <tr class="mau">
                                     <th class="product-id">#</th>
                                     <th class="product-thumbnail">Tên sản phẩm</th>
                                     <th class="product-id">Hình ảnh</th>
@@ -32,29 +32,30 @@
                                     <!-- <th class="product-remove">Action</th> -->
                                 </tr>
                             </thead>
-                            <tbody >
+                            <tbody>
                                 <?php
-                                foreach($onedh as $key => $dhct):
-                                  extract($dhct);
-                               ?>
-                                <tr>
-                                    <td class="product-id"><?= $key + 1  ?></td>
-                                    <td class="product-name"><?= $name ?? "" ?></td>
-                                    <td class="product-number"><img src="upload/<?= $img ?? "" ?>" alt="" width="80px"></td>
-                                    <td class="product-address"><?= $soluong ?? "" ?></td>
-                                    <td class="product-quantity"><?= number_format((int)$thanhtien, 0, ",", ".") ?? "" ?> <u> đ</u></td>
-                                    <!-- <td class="product-remove">
+                                foreach ($onedh as $key => $dhct) :
+                                    extract($dhct);
+                                ?>
+                                    <tr>
+                                        <td class="product-id"><?= $key + 1  ?></td>
+                                        <td class="product-name"><?= $name ?? "" ?></td>
+                                        <td class="product-number"><img src="upload/<?= $img ?? "" ?>" alt="" width="80px"></td>
+                                        <td class="product-address"><?= $soluong ?? "" ?></td>
+                                        <td class="product-quantity"><?= number_format((int)$thanhtien, 0, ",", ".") ?? "" ?> <u> đ</u></td>
+                                        <!-- <td class="product-remove">
                                             <a href="#">Xem chi tiết</a>
                                         </td> -->
-                                </tr>
+                                    </tr>
                                 <?php
                                 endforeach;
                                 ?>
                             </tbody>
-                            
-
                         </table>
-                        
+                        <div class="Place-order mt-25" style="text-align:left">
+                            <a class="btn btn--lg btn-primary my-2 my-sm-0" href="index.php?act=donhang">Trở Về</a>
+                        </div>
+
                     </div>
                 </form>
             </div>

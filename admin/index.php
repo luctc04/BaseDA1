@@ -193,6 +193,13 @@ ob_start();
                 $listdonhang = loadall_donhangadmin();
                 include "donhang/list_donhang.php";
                 break; 
+            case 'list_donhangct':
+                if (isset($_GET['id_order'])) {
+                    $id_order = $_GET['id_order'];
+                    $onedh = loadone_donhangchitiet($id_order);
+                }
+                include "donhang/list_donhangct.php";
+                break;
             /* controller bình luận */    
             case 'dsbl':
                 $listbinhluan= loadall_binhluan(0);
