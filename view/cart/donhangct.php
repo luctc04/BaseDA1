@@ -40,7 +40,7 @@
                                 <tr>
                                     <td class="product-id"><?= $key + 1  ?></td>
                                     <td class="product-name"><?= $name ?? "" ?></td>
-                                    <td class="product-number"><img src="upload/<?= $hinh ?? "" ?>" alt="" width="80px"></td>
+                                    <td class="product-number"><img src="upload/<?= $img ?? "" ?>" alt="" width="80px"></td>
                                     <td class="product-address"><?= $soluong ?? "" ?></td>
                                     <td class="product-quantity"><?= number_format((int)$thanhtien, 0, ",", ".") ?? "" ?> <u> đ</u></td>
                                     <!-- <td class="product-remove">

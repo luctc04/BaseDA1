@@ -9,6 +9,7 @@ include "model/order.php";
 include "view/header.php";
 include "global.php";
 
+
 if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 if (!isset($_SESSION['success'])) $_SESSION['success'] = [];
 
@@ -57,6 +58,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     }
                     unset($_SESSION['cart']);
                     $_SESSION['donhang'] = $idBill;
+                    require_once 'PHPMailer/sendmail.php';
                     header("Location: index.php?act=donhang");
                 }
                 include "view/cart/order.php";
@@ -72,7 +74,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['id_order'])) {
                 $id_order = $_GET['id_order'];
                 // $list_dhct=loadall_donhangct($id_order);
-                $onedh = loadone_donhang($id_order);
+                $onedh = loadone_donhangchitiet($id_order);
             }
             include "view/cart/donhangct.php";
             break;
@@ -94,6 +96,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'sanphamct':
             if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                 $id = $_GET['idsp'];
+                // $soluong =$_POST['soluong'];
+                // $price =$_POST['price_sale'];
+                // $_SESSION['cart']=
+                // [ 'id'=> $id,
+                // 'name'=> $name,
+                // 'price'=> $price];
                 $onesp = loadone_sanpham($id);
                 extract($onesp);
                 $sp_cung_loai = load_sanpham_cungloai($id, $iddm);
