@@ -152,7 +152,7 @@
                                             </li>
 
                                             <li class>
-                                                <a href="index.php?act=dsdh" class="waves-effect waves-dark">
+                                                <a href="index.php?act=dsbl" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
                                                         <i class="feather icon-menu"></i>
                                                     </span>

@@ -70,7 +70,7 @@
                                         <label for="trangthai" class="mt-3">Trạng thái</label>
                                         <select name="trangthai" id="" class="form-control">
                                         <?php
-                                                            if($trangthai==1){echo '<option '.$donhang['trangthai'].'  value="1" >Đang chờ duyệt</option> <option '.$donhang['trangthai'].'  value="2" >Đã xác nhận</option>';}else{
+                                                            if($trangthai==1){echo '<option '.$donhang['trangthai'].'  value="1" >Đang chờ duyệt</option> <option ';}else{
                                                                 if($trangthai ==2){echo '<option '.$donhang['trangthai'].'  value="2" >Đã xác nhận</option>';}else{
                                                                     if($trangthai ==3){echo '<option '.$donhang['trangthai'].'  value="3" >Đang vận chuyển</option>';}else{
                                                                         if($trangthai ==4){echo '<option '.$donhang['trangthai'].'  value="4" >Hoàn thành</option>';}

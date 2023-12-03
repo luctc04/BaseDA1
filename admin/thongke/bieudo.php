@@ -32,7 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Danh sách thống kê</h5>
+                                    <h5>Biểu đồ thống kê</h5>
                                     <a href="index.php?act=thongke" class="btn btn-info btn-sm">Danh sách</a>
                                 </div><div class="sangphai">
                                     <div id="piechart"></div>

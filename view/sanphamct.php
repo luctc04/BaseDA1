@@ -68,15 +68,19 @@
 							<div class="product-action">
 								<p>Số lượng: <?= $soluong ?></p>
 								<div class="cart-plus">
-									<form action="#">
-										<div class="cart-plus-minus"><input type="text" value="1" /></div>
+									<form action="index.php?act=sanphamct&idsp=<?= $id?>" method="post">
+										<div class="">
+											<!-- <input type="hidden" name="id" value=""> -->
+											<!-- <input type="hidden" name="price_sale" value="<?= $price_sale ?>"> -->
+											<input type="number" name="soluong" min="1" max="<?=$soluong?>" value="1" />
+										</div>
 									</form>
 								</div>
 								<div class="button-top">
 									<a href="#"><i class="fa fa-heart"></i></a>
 								</div>
 								<div class="button-cart">
-									<button><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+									<button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
 								</div>
 							</div>
 							<div class="product-share">
@@ -120,15 +124,17 @@
 												<div class="review-form-wrapper">
 													<h3>Bình luận</h3>
 													<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(function(){
-                        $("#binhluan").load("view/binhluan/binhluanform.php", {idpro: <?=$id?>});
-                        
-                    });
-                </script>
-                <div class="row  " id="binhluan">
-                    
-                </div>
+													<script>
+														$(document).ready(function() {
+															$("#binhluan").load("view/binhluan/binhluanform.php", {
+																idpro: <?= $id ?>
+															});
+
+														});
+													</script>
+													<div class="row  " id="binhluan">
+
+													</div>
 												</div>
 											</div>
 										</div>
