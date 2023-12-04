@@ -96,7 +96,7 @@
 					</div>
 				</aside>
 			</div>
-			<div class="col-md-9  col-xs-12" >
+			<div class="col-md-9  col-xs-12">
 				<div>
 					<!-- Nav tabs -->
 					<ul class="shop-tab" role="tablist">
@@ -104,64 +104,86 @@
 						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-th" aria-hidden="true"></i></a></li>
 						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-th-list" aria-hidden="true"></i></a></li>
 					</ul>
-				</div>	
-						<!--  -->
-						<div class="row" style="margin-top: 50px;">
-									<?php
-										$i = 0;
-										foreach ($dssp as $sp) :
-											extract($sp);
-											$linksp = "index.php?act=sanphamct&idsp=" . $id;
-											$hinh = $img_path . $img;
-											if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
-												$mr = "";
-											} else {
-												$mr = "mr";
-											}
-										?>
-							<div class="single-product " style="width: 250px;margin-left: 20px; margin-bottom:30px">
+				</div>
+				<!--  -->
+				<div class="row" style="margin-top: 50px;">
+					<?php
+					$i = 0;
+					foreach ($dssp as $sp) :
+						extract($sp);
+						$linksp = "index.php?act=sanphamct&idsp=" . $id;
+						$hinh = $img_path . $img;
+						if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
+							$mr = "";
+						} else {
+							$mr = "mr";
+						}
+					?>
+						<div class="single-product " style="width: 250px;margin-left: 20px; margin-bottom:30px">
 
-								<div class="product-img">
-									<a href="<?= $linksp ?>">
-										<img src="<?= $hinh ?>" alt="" width="100%" />
-									</a>
-									<span class="tag-line">new</span>
-									<div class="product-action">
-										<div class="button-top">
-											<a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
-											<a href="#"><i class="fa fa-heart"></i></a>
-										</div>
-											<!-- <div class="button-cart"> 
-															<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>-->
-													<!-- <input type="submit" class="fa fa-shopping-cart" name="addtocart" value="Thêm vào giỏ hàng">
-														</div>
-													</form> --> 
-										<div class="button-cart">
-											<button type="submit" name="addtocart"><i class="fa fa-shopping-cart"></i> add to cart</button>
-										</div>
-
+							<div class="product-img">
+								<a href="<?= $linksp ?>">
+									<img src="<?= $hinh ?>" alt="" width="100%" />
+								</a>
+								<span class="tag-line">new</span>
+								<div class="product-action">
+									<div class="button-top">
+										<a href="#" data-toggle="modal" data-target="#productModal"><i class="fa fa-search"></i></a>
+										<a href="#"><i class="fa fa-heart"></i></a>
 									</div>
+									<div class="button-cart">
+										<button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+									</div>
+
 								</div>
-									<div class="product-content">
-											<h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
-											<div class="price">
-												<span><?= number_format((int)$price_sale, 0, ",", ".") ?><u>đ</u></span>
-												<span class="old"><?= number_format((int)$price, 0, ",", ".") ?><u>đ</u></span>
-											</div>
-									</div>
-
 							</div>
-							
-											<?php
-												$i++;
-											endforeach;
-											?>
-					</div>
-						<!--  -->
-					
-				
+							<div class="product-content">
+								<h3><a href="<?= $linksp ?>"><?= $name ?></a></h3>
+								<div class="price">
+									<span><?= number_format((int)$price_sale, 0, ",", ".") ?><u>đ</u></span>
+									<span class="old"><?= number_format((int)$price, 0, ",", ".") ?><u>đ</u></span>
+								</div>
+							</div>
+
+						</div>
+
+					<?php
+						$i++;
+					endforeach;
+					?>
+				</div>
+				<!--  -->
+
+
 			</div>
 		</div>
 	</div>
 </div>
-</div></div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+	let totalProduct = document.getElementById('totalProduct');
+
+	function addToCart(productId, productName, productPrice) {
+		// console.log(productId, productName, productPrice);
+		// Sử dụng jQuery
+		$.ajax({
+			type: 'POST',
+			// Đường dẫ tới tệp PHP xử lý dữ liệu
+			url: './view/cart/addToCart.php',
+			data: {
+				id: productId,
+				name: productName,
+				price: productPrice
+			},
+			success: function(response) {
+				totalProduct.innerText = response;
+				alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		});
+	}
+</script>

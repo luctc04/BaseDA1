@@ -194,7 +194,7 @@
                                 </div>
                             </div>
                             <div class="order-button-payment">
-                                <input type="submit" value="Đặt Hàng" name="order_confirm"/>
+                                <input type="submit" value="Hoàn Tất Đặt Hàng" name="order_confirm"/>
                             </div>
                         </div>
                     </div>
