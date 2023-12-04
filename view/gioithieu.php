@@ -59,7 +59,7 @@
 							<div class="team-info">
 								<h2>Jon doe</h2>
 								<span>coding guru</spa>
-							</div>n
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-4">

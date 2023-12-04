@@ -38,7 +38,7 @@
 							</div> -->
 						</div>
 					</div>
-					<div class="col-md-7 col-sm-7 col-xs-12 shop-list shop-details">
+					<div class="col-md-7 col-sm-7 col-xs-12 shop-list shop-details" id="order">
 						<div class="product-content">
 							<h3><a href="product-details.html"><?= $name ?></a></h3>
 							<div class="price">
@@ -79,6 +79,9 @@
 								</div>
 								<div class="button-cart">
 									<button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
+								</div>
+								<div class="wc-proceed-to-checkout">
+									<a href="index.php?act=order" name="order">Đặt hàng</a>
 								</div>
 							</div>
 							<div class="product-share">
@@ -215,7 +218,7 @@
 						</div>
 						<div class="single-sale">
 							<a href="#">
-								<img src="/img/product/p11" alt="" />
+								<img src="/img/product/p11.jpg" alt="" />
 								<h2>sale off</h2>
 							</a>
 						</div>
