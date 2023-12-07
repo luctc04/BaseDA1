@@ -63,7 +63,7 @@
                                                 ?>
                                         </select>
                                         <label for="name" class="mt-3">Tên</label>
-                                        <input type="text" name="name" class="form-control" value="<?=$name?>">
+                                        <input type="text" name="name" class="form-control" value="<?=$sanpham['name'] ?>">
 
                                         <label for="img" class="mt-3">Ảnh</label>
                                         <input type="file" name="hinh" class="form-control"><br>

@@ -38,7 +38,16 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'PUNNY PET XIN CAM ON QUY KHACH';
-    $mail->Body = 'Chúng tôi trân trọng cảm ơn bạn đã lựa chọn mua sắm tại cửa hàng "Punny Pet". Sự ủng hộ của bạn là nguồn động viên lớn, và chúng tôi hy vọng bạn sẽ thấy hài lòng với sản phẩm của mình. Hãy liên hệ nếu có bất kỳ điều gì chúng tôi có thể hỗ trợ.';
+    $mail->Body = 'Xin chào ,
+
+    Chúng tôi xin gửi lời cảm ơn chân thành đến bạn và người bạn lông mừng đã tin tưởng và chọn lựa cửa hàng của chúng tôi cho nhu cầu về thú cưng. Sự ủng hộ của bạn giúp chúng tôi tiếp tục mang đến những sản phẩm chất lượng và dịch vụ tận tâm nhất cho thú cưng của bạn.
+    
+    Nếu có bất kỳ thắc mắc hay cần hỗ trợ nào, đừng ngần ngại liên hệ với chúng tôi. Chúng tôi luôn sẵn lòng hỗ trợ bạn và người bạn lông mừng.
+    
+    Cảm ơn bạn rất nhiều và chúc bạn và thú cưng có những ngày thật vui vẻ!
+    
+    Trân trọng,
+    Funny Pet';
     // $mail->AltBody = 'Trân trọng,"Perfume Shop"';
 
     $mail->send();

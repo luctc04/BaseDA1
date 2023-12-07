@@ -61,10 +61,21 @@ if (is_array($tk)) {
                                         <input type="text" name="tel" class="form-control" value="<?= $tel ?>">
 
                                         <label for="role" class="mt-3">Role</label>
-                                        <input type="text" name="role" class="form-control" value="<?= $role ?>">
+                                        <select name="role" id="" class="form-control">
+                                        <?php
+                                                if($role==0){echo '<option '.$tk['role'].'  value="0" >Người dùng</option> <option ';}else{
+                                                    if($role==1){echo '<option '.$tk['role'].'  value="1" >Admin</option>';}
+                                                       
+                                                    
+                                                }
+                                        ?>
+                                            <option <?= $tk['role'] ?>  value="0" >Người dùng</option>
+                                            <option <?= $tk['role'] ?>  value="1" >Admin</option>
+                                        </select><br>
+                                        
 
                                         <input type="submit" name="btn-submit" class="btn btn-info mt-3" value="Submit">
-                                        <a href="index.php?act=listsp" class="btn btn-primary mt-3">Quay lại d/s</a>
+                                        <a href="index.php?act=dskh" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>
                                 </div>
                             </div>

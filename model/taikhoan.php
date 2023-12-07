@@ -22,10 +22,19 @@
         $sp = pdo_query_one($sql);
         return $sp;
     }
+    function checkemail_dangky($email){
+        $sql = "SELECT * FROM taikhoan WHERE email = '$email'";
+        $checkmail_dangky = pdo_query($sql);
+        return $checkmail_dangky;    
+    }
     function checkemail($email){
         $sql = "select * from taikhoan where email='".$email."'";
         $sp = pdo_query_one($sql);
         return $sp;
+    }
+    function isEmail($email){
+        $checkEmail = filter_var($email,FILTER_VALIDATE_EMAIL);
+        return $checkEmail;
     }
     function update_taikhoan($id,$user,$pass,$email,$address,$tel){
         $sql= "update taikhoan set user='$user' , pass ='$pass', email ='$email',address = '$address' ,tel = '$tel' where id = $id";
@@ -35,4 +44,5 @@
         $sql= "update taikhoan set user='$user' , pass ='$pass', email ='$email',address = '$address' ,tel = '$tel',role = '$role' where id = $id";
         pdo_execute($sql);
     }
+    
 ?>

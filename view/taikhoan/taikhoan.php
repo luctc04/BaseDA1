@@ -80,21 +80,26 @@ if (isset($_SESSION['user'])) {
 
                             <label>User</label>
                             <input type="text" name="user" />
+                            <span style="color: red"><?php echo !empty($error['user'])?$error['user']:false ?></span><br>
+
 
                             <label>Email</label>
                             <input type="email" name="email" />
+                            <span style="color: red"><?php echo !empty($error['email'])?$error['email']:false ?></span><br>
+
 
                             <label>Password</label>
                             <input type="password" name="pass" />
+                            <span style="color: red"><?php echo !empty($error['pass'])?$error['pass']:false ?></span><br>
+
 
                             <input class="login-sub" type="submit" name="dangky" value="Đăng ký" />
                         </form><br>
 
-                        <p class="thongbao">
+                        <p class="thongbao" style="color:green">
                             <?php
-                            if (isset($thongbao) && ($thongbao != "")) {
+                            if (isset($thongbao) && ($thongbao != ""))
                                 echo $thongbao;
-                            }
                             ?>
                         </p>
 
