@@ -52,6 +52,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     } else {
                         $id_user = 0;
                     }
+
                     $idBill = addOrder($id_user, $txthoten, $txttel, $txtemail, $txtaddress, $_SESSION['resultTotal'], $pttt);
                     foreach ($cart as $item) {
                         addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
@@ -69,7 +70,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         require_once 'PHPMailer/sendmail.php';
                         header("Location: index.php?act=donhang");
                     }
-                    
                 }
                 include "view/cart/order.php";
             } else {
@@ -126,8 +126,32 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $email = $_POST['email'];
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                insert_taikhoan($email, $user, $pass);
-                $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận!";
+
+                $checkemail = checkemail_dangky($email);
+                $typeEmail = isEmail($email);
+                $error = [];
+                // validate email: bat buoc nhap, email dung dinh dang, email ton tai
+                if (!$typeEmail) {
+                    $error['email'] = '*Email không đúng định dạng.';
+                } else {
+                    if (!empty($checkemail)) {
+                        $error['email'] = '*Email này đã tồn tại vui lòng nhập email khác.';
+                    }
+                }
+
+                // validate hoten
+                if (empty($user)) {
+                    $error['user'] = '*Họ và tên không được để trống.';
+                }
+
+                if (empty(trim($pass))) {
+                    $error['pass'] = '*Mật khẩu không được để trống';
+                }
+
+                if (empty($error)) {
+                    insert_taikhoan($email, $user, $pass);
+                    $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận!";
+                }
             }
             include "view/taikhoan/taikhoan.php";
             break;

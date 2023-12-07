@@ -38,11 +38,18 @@
                                     <form action="index.php?act=adddm" method="post">
                                         <label for="name">Name</label>
                                         <input type="text" name="tenloai" class="form-control">
+                                        
+                                        <span style="color:red"><?php echo !empty($error['tenloai']) ? $error['tenloai'] : false   ?> </span><br>
 
                                         <input type="submit" name="btn-submit" class="btn btn-info mt-3" value="Submit">
                                         <a href="index.php?act=listdm" class="btn btn-primary mt-3">Quay lại d/s</a>
-                                        
-                                    </form>
+
+                                    </form><br>
+                                    <?php
+                                    if (!empty($thongbao) && ($thongbao != "")) {
+                                    ?> <h5 style="color:green"><?= $thongbao ?></h5><?php
+                                                                                }
+                                                                                    ?>
                                 </div>
                             </div>
                         </div>

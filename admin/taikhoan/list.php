@@ -54,31 +54,38 @@
 
                                             <tbody>
                                                 <?php
-                                                foreach ($listtaikhoan as $taikhoan) {
+                                                foreach ($listtaikhoan as $taikhoan) :
                                                     extract($taikhoan);
                                                     $suatk = "index.php?act=suatk&id=" . $id;
                                                     $xoatk = "index.php?act=xoatk&id=" . $id;
-                                                    echo '<tr>
-                                                            <td>' . $id . '</td>
-                                                            <td>' . $user . '</td>
-                                                            <td>' . $pass . '</td>
-                                                            <td>' . $email . '</td>
-                                                            <td>' . $address . '</td>
-                                                            <td>' . $tel . '</td>
-                                                            <td>' . $role . '</td>
-
-                                                            <td>
-                                                                <a href="'.$suatk.'" class="btn btn-primary btn-sm">Cập nhật</a>
-
-                                                                <form action="'.$xoatk.'" method="post">
-                                                                    <button type="submit" class="btn btn-danger btn-sm mt-2">Xóa</button>
-                                                                </form>
-                                                        </td>
-                                                        </tr>';
-                                                }
-
-
                                                 ?>
+                                                    <tr>
+                                                        <td><?= $id ?></td>
+                                                        <td><?= $user ?></td>
+                                                        <td><?= $pass ?></td>
+                                                        <td><?= $email ?></td>
+                                                        <td><?= $address ?></td>
+                                                        <td><?= $tel ?></td>
+                                                        <td><?php
+                                                            if ($role == 0) {
+                                                                echo "Người dùng";
+                                                            } else {
+                                                                if ($role == 1) {
+                                                                    echo "Admin";
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </td>
+
+                                                        <td>
+                                                            <a href="<?= $suatk ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+
+                                                            <form action="<?= $xoatk ?>" method="post">
+                                                                <button type="submit" class="btn btn-danger btn-sm mt-2">Xóa</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
 
                                         </table>

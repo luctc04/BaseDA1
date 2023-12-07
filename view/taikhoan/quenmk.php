@@ -29,7 +29,7 @@
 
                         <input type="reset" class="login-sub" value="Nhập lại">
                         <input type="submit" class="login-sub" value="Gửi" name="guiemail">
-                    </form>
+                    </form><br>
                     <h2 class="thongbao">
                     <?php
                     if (isset($thongbao) && ($thongbao != "")) {
