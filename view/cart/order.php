@@ -114,6 +114,12 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
+                                <div class="order-notes">
+                                    <div class="checkout-form-list">
+                                        <label>Order Notes</label>
+                                        <textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="different-address">
@@ -187,14 +193,14 @@
                                     </div>
                                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                         <div class="panel-body">
-                                            <p><input type="radio" name="pttt" id="" value="1" checked required> Thanh toán khi giao hàng</p>
-                                            <p><input type="radio" name="pttt" id="" value="2" required> Thanh toán MOMO ATM</p>
+                                            <p><input type="radio" name="pttt" id="" value="1" checked required> Thanh toán khi giao hàng (COD)</p>
+                                            <p><input type="radio" name="pttt" id="" value="2" required> Thanh toán bằng Momo</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="order-button-payment">
-                                <input type="submit" value="Hoàn Tất Đặt Hàng" name="order_confirm"/>
+                                <input type="submit" value="Hoàn Tất Đặt Hàng" name="order_confirm" />
                             </div>
                         </div>
                     </div>

@@ -80,9 +80,6 @@
 								<div class="button-cart">
 									<button data-id="<?= $id ?>" class="btnCart" onclick="addToCart(<?= $id ?>, '<?= $name ?>', <?= $price_sale ?>)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
 								</div>
-								<div class="wc-proceed-to-checkout">
-									<a href="index.php?act=order" name="order">Đặt hàng</a>
-								</div>
 							</div>
 							<div class="product-share">
 								<label>Share:</label>
@@ -240,7 +237,7 @@
 		$.ajax({
 			type: 'POST',
 			// Đường dẫ tới tệp PHP xử lý dữ liệu
-			url: './view/cart/add_sp.php',
+			url: './view/cart/addToCart.php',
 			data: {
 				id: productId,
 				name: productName,
