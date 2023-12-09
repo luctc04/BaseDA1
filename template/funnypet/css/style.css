@@ -274,7 +274,7 @@ position: relative;}
 }
 .main-menu ul li .mega-menu span a {
   color: #444;
-  display: block;
+  display: block; 
   font-weight: 400;
   padding: 8px 0;
   text-transform: capitalize;
