@@ -87,7 +87,6 @@ $dsdm = loadall_danhmuc();
                       <div class="mega-menu">
                         <div class="mega-left">
                           <span>
-                            <a href="#" class="mega-title">Thú cưng</a>
                             <?php
                             foreach ($dsdm as $dm) {
                               extract($dm);
