@@ -4,6 +4,10 @@
             <div class="col-md-12">
                 <div class="breadcrumb-list">
                     <h1>Tài khoản</h1>
+                    <ul>
+						<li><a href="index.php">Trang chủ</a> <span class="divider">|</span></li>
+						<li><a href="#">Đăng ký</a> <span class="divider"></span></li>
+					</ul>
                 </div>
             </div>
         </div>
@@ -17,62 +21,13 @@
 if (isset($_SESSION['user'])) {
     extract($_SESSION['user']);
 ?>
-    <div class="row mb10">
-        Xin chào: <strong><?= $user ?></strong>
-    </div>
-    <div class="row mb10">
-        <li>
-            <a href="index.php?act=quenmk">Quên mật khẩu</a>
-        </li>
-        <li>
-            <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
-        </li>
-        <?php if ($role == 1) { ?>
-            <li>
-                <a href="admin/index.php">Đăng nhập Admin</a>
-            </li>
-        <?php } ?>
-        <li>
-            <a href="index.php?act=thoat">Thoát</a>
-        </li>
-    </div>
 <?php
 } else {
-
 ?>
     <div class="login-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="login-content">
-                        <h2 class="login-title">Đăng nhập</h2>
-                        <p>Hello,Welcome to your account</p>
-                        <div class="social-sign">
-                            <a href="#"><i class="fa fa-facebook"></i> Sign in with facebook</a>
-                            <a class="twitter" href="#"><i class="fa fa-twitter"></i> Sign in with twitter</a>
-                        </div>
-                        <form action="index.php?act=dangnhap" method="post">
-
-                            <label>User</label>
-                            <input type="text" name="user" />
-
-                            <label>Password</label>
-                            <input type="password" name="pass" />
-
-                            <div class="login-lost">
-                                <span class="log-rem">
-                                    <input type="checkbox" />
-                                    <label> Ghi nhớ tài khoản!</label>
-                                </span>
-                                <span class="forgot-login">
-                                    <a href="index.php?act=quenmk">Quên mật khẩu?</a>
-                                </span>
-                            </div>
-                            <input class="login-sub" type="submit" name="dangnhap" value="Đăng nhập" />
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-6-1minh">
                     <div class="login-content login-margin">
                         <h2 class="login-title">TẠO TÀI KHOẢN MỚI</h2>
                         <p>Create your own Unicase account.</p>
