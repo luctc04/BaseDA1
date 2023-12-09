@@ -202,7 +202,7 @@ position: relative;}
   top: 130%;
   transition: all 0.3s ease 0s;
   visibility: hidden;
-  width: 250px;
+  width: 50px;
   z-index: 999999;
 }
 .main-menu ul li ul li {
@@ -232,7 +232,7 @@ position: relative;}
 .inner-container{position:relative}
 .main-menu ul li .mega-menu {
   background-color: rgb(247, 179, 190);
-  left: 300px;
+  left: 350px;
   margin: 0;
   opacity: 0;
   padding: 20px 30px;
@@ -241,7 +241,7 @@ position: relative;}
   top: 130%;
   transition: all 0.3s ease 0s;
   visibility: hidden;
-  width: 50%;
+  width: 35%;
   z-index: 9999;
 }
 .main-menu ul li .mega-menu-2 {
@@ -255,7 +255,7 @@ position: relative;}
   top: 130%;
   transition: all 0.3s ease 0s;
   visibility: hidden;
-  width: 500px;
+  width: 250px;
   height: 250px;
   z-index: 9999;
 }
@@ -264,7 +264,7 @@ position: relative;}
 .main-menu ul li .mega-menu span {
   float: left;
   padding-right: 30px;
-  width: 24.6%;
+  width: 50%;
 }
 .main-menu ul li .mega-menu span a.mega-title {
   border-bottom: 1px solid #FFF;
@@ -279,28 +279,36 @@ position: relative;}
   padding: 8px 0;
   text-transform: capitalize;
 }
-.main-menu ul li:hover .mega-menu span a{color:#fff}
+.main-menu ul li:hover .mega-menu span a{color:#fff;font-size: 15px;text-transform: uppercase;font-weight: 600;}
 .main-menu ul li:hover .mega-menu span a:hover{color:#f56382}
 .main-menu ul li .mega-menu span.mega-menu-img {
   padding-right: 0;
-  width: 30%;
+  width:50%;
 }
 
 .main-menu ul li .mega-menu .mega-left {
   float: left;
-  width: 60%;
+  width: 40%;
   padding-left: 10px;
 }
 .main-menu ul li .mega-menu .mega-left span {
-  width: 50%;
-  padding-left: 20px;
+  width: 200px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+.mega-left span{
+  margin-top: 10px;
+  line-height: 40px;
+ 
   
 }
 .main-menu ul li .mega-menu .mega-right {
   float: right;
-  width: 40%;
-  padding-right: 20px;
-  margin-top: 20px;
+  width: 50%;
+  padding-right: 0px;
+  margin-top: 10px;
 }
 .main-menu ul li .mega-menu .mega-right span {
   width: 100%;
