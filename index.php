@@ -103,6 +103,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $tendm = load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
+        case 'sanpham_full':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+                $iddm = $_GET['iddm'];
+            } else {
+                $iddm = 0;
+            }
+            $dssp = loadall_sanpham($kyw, $iddm);
+            $tendm = load_ten_dm($iddm);
+            $spnew = loadall_sanpham_home();
+            include "view/sanpham.php";
+            break;
         case 'sanphamct':
             if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                 $id = $_GET['idsp'];
@@ -153,7 +169,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận!";
                 }
             }
-            include "view/taikhoan/taikhoan.php";
+            include "view/taikhoan/dangky.php";
             break;
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
@@ -168,6 +184,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
                 }
+
+                $error = [];
+                if (empty($user)) {
+                    $error['user'] = "*Họ tên không được để trống.";
+                } else if ($user !== $checkuser) {
+                    $error['user'] = "*Tên người dùng không tồn tại vui lòng nhập lại. ";
+                }
+                if (empty($pass)) {
+                    $error['pass'] = "*Mật khẩu không được để trống.";
+                } else if ($pass !== $checkuser) {
+                    $error['pass'] =  "*Mật khẩu không trùng khớp.";
+                }
+
                 if (isset($_SESSION['user']) && $_SESSION['taikhoan']['role'] == 1) {
                     header("location:/admin/index.php");
                 } else {
@@ -176,6 +205,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     }
                 }
             }
+            include "view/taikhoan/dangnhap.php";
             break;
         case "dangxuat":
             unset($_SESSION["user"]);

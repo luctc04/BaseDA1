@@ -33,27 +33,33 @@ $dsdm = loadall_danhmuc();
   <script src="/template/funnypet/js/vendor/modernizr-2.8.3.min.js"></script>
 
   <style>
-    .mr{
-    margin-right: 2%;
-  }
-  .col-md-6-1minh{
-    width: 550px;
-    margin-left: 25%;
-  }
-  .thongbao{
+    .mr {
+      margin-right: 2%;
+    }
 
-    color: red;
-    font-size: 15px;
-  }
-  .mau{
-    background-color: #FFAEBC;
-  }.soluong1{
-    padding: 6.9px;
-    text-align: center;
-  }
-  .soluong1{
-    border: 1px solid palevioletred;
-  }
+    .col-md-6-1minh {
+      width: 550px;
+      margin-left: 25%;
+    }
+
+    .thongbao {
+
+      color: red;
+      font-size: 15px;
+    }
+
+    .mau {
+      background-color: #FFAEBC;
+    }
+
+    .soluong1 {
+      padding: 6.9px;
+      text-align: center;
+    }
+
+    .soluong1 {
+      border: 1px solid palevioletred;
+    }
   </style>
 
 </head>
@@ -76,21 +82,21 @@ $dsdm = loadall_danhmuc();
                 <nav>
                   <ul>
                     <li><a href="index.php">Trang chủ</a></li>
-                    
-                    <li class="static"><a href="#">Thú cưng</a>
+
+                    <li class="static"><a href="index.php?act=sanpham_full">Thú cưng</a>
                       <div class="mega-menu">
                         <div class="mega-left">
                           <span>
-                          <a href="#" class="mega-title">Thú cưng</a>
+                            <a href="#" class="mega-title">Thú cưng</a>
                             <?php
-                              foreach ($dsdm as $dm) {
-                                extract($dm);
-                                $linkdm = "index.php?act=sanpham&iddm=" . $id;
-                                echo '
+                            foreach ($dsdm as $dm) {
+                              extract($dm);
+                              $linkdm = "index.php?act=sanpham&iddm=" . $id;
+                              echo '
                                     <a href="' . $linkdm . '">' . $name . '</a>
                                   ';
-                              }
-                              ?>
+                            }
+                            ?>
                           </span>
                         </div>
                         <div class="mega-right">
@@ -113,39 +119,40 @@ $dsdm = loadall_danhmuc();
                 <div class="total-cart">
                   <a href="index.php?act=listcart">
                     <i class="fa fa-shopping-cart"></i>
-                    <span id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) :0 ?></span>
+                    <span id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                   </a>
                 </div>
 
               </div>
-                <div class="user-meta" style="color: #fff; font-weight: 700">
+              <div class="user-meta" style="color: #fff; font-weight: 700">
                 <?php
-                  if(isset($_SESSION['user'])){
-                    echo "<p>". $_SESSION['user']['user'];
-                    if($_SESSION['user']['role']==1){
-                      echo'
+                if (isset($_SESSION['user'])) {
+                  echo "<p>" . $_SESSION['user']['user'];
+                  if ($_SESSION['user']['role'] == 1) {
+                    echo '
                       <ul style="margin-top:20px">
                       <li><a href="admin/index.php">Truy cập Admin</a></li>
                       <li><a href="index.php?act=dangxuat">Đăng Xuất</a></li>
                       
-                      </ul>';    
-                    }else{
-                      echo '
+                      </ul>';
+                  } else {
+                    echo '
                       <ul style="margin-top:20px">
                       <li><a href="index.php?act=donhang">Đơn hàng</a></li>
                       <li><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a></li>
                       <li><a href="index.php?act=dangxuat">Đăng Xuất</a></li>
                       </ul>
                       ';
-                    }
-                  }else{
+                  }
+                } else {
                   echo  '<a href="#"><i class="fa fa-cog"></i></a>
                     <ul style="margin-top:20px">
-                    <li><a href="index.php?act=donhang">Đơn hàng</a></li>
-                      <li><a href="index.php?act=dangky">Tài khoản</a></li>
+                      <li><a href="index.php?act=donhang">Đơn hàng</a></li>
+                      <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
+                      <li><a href="index.php?act=dangky">Đăng ký</a></li>
                       <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
                     </ul>';
-                  }
+                }
                 ?>
               </div>
               <div class="header-search">
@@ -153,7 +160,7 @@ $dsdm = loadall_danhmuc();
                 <div class="header-form">
                   <form action="index.php?act=sanpham" method="post">
                     <input type="text" name="kyw" placeholder="search" />
-                    <button type="submit"><i class="fa fa-search" ></i></button>
+                    <button type="submit"><i class="fa fa-search"></i></button>
                   </form>
                 </div>
               </div>
@@ -162,6 +169,6 @@ $dsdm = loadall_danhmuc();
         </div>
       </div>
     </div>
-  
+
 
   </header>

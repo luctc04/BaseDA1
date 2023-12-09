@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="breadcrumb-list">
-					<h1>DANH MỤC CỬA HÀNG</h1>
+					<h1>CỬA HÀNG</h1>
 					<ul>
 						<li><a href="index.php">Trang chủ</a> <span class="divider">|</span></li>
 						<li><a href="index.php?act=sanpham_full">Thú cưng</a> <span class="divider"></span></li>
