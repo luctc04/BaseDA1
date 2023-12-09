@@ -116,7 +116,7 @@
                                             <li class>
                                                 <a href="index.php?act=listdm" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="feather icon-menu"></i>
+                                                        <i class="feather icon-list"></i>
                                                     </span>
                                                     <span class="pcoded-mtext">Quản Lý Danh Mục</span>
                                                 </a>
@@ -145,7 +145,7 @@
                                             <li class>
                                                 <a href="index.php?act=list_donhang" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="feather icon-menu"></i>
+                                                        <i class="feather icon-package"></i>
                                                     </span>
                                                     <span class="pcoded-mtext">Quản Lý Đơn Hàng</span>
                                                 </a>
@@ -154,7 +154,7 @@
                                             <li class>
                                                 <a href="index.php?act=dsbl" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="feather icon-menu"></i>
+                                                        <i class="feather icon-edit"></i>
                                                     </span>
                                                     <span class="pcoded-mtext">Quản Lý Bình Luận </span>
                                                 </a>
@@ -163,7 +163,7 @@
                                             <li class>
                                                 <a href="index.php?act=thongke" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="feather icon-menu"></i>
+                                                        <i class="feather icon-aperture rotate-refresh"></i>
                                                     </span>
                                                     <span class="pcoded-mtext">Thống Kê</span>
                                                 </a>
