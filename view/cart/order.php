@@ -116,8 +116,8 @@
                             <div class="col-md-12">
                                 <div class="order-notes">
                                     <div class="checkout-form-list">
-                                        <label>Order Notes</label>
-                                        <textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        <label>Ghi chú đặt hàng</label>
+                                        <textarea id="checkout-mess" cols="30" rows="10" placeholder="Nghi chú về đơn hàng của bạn, ví dụ như ghi chú đặc biệt kh giao hàng."></textarea>
                                     </div>
                                 </div>
                             </div>

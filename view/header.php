@@ -149,7 +149,6 @@ $dsdm = loadall_danhmuc();
                       <li><a href="index.php?act=donhang">Đơn hàng</a></li>
                       <li><a href="index.php?act=dangnhap">Đăng nhập</a></li>
                       <li><a href="index.php?act=dangky">Đăng ký</a></li>
-                      <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
                     </ul>';
                 }
                 ?>
